@@ -1,19 +1,33 @@
 "use client";
 
+import Hamburger from "@components/Hamburger/Hamburger";
 import { Logo } from "@components/icons";
+import Navigation from "@components/Navigation/Navigation";
 import ThemeToggle from "@components/ThemeToggle/ThemeToggle";
 import ThemeContext from "@context/context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
-import styles from './Navbar.module.scss';
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const { isDark } = useContext(ThemeContext);
+
+  const closeMenu = () => {
+    console.log('closing');
+    setShowMenu(false);
+  }
+
   return (
-    <div className={styles.container}>
-      <Logo color={isDark ? "white" : "black"} />
+    <header className={styles.container}>
+      <div className={styles.logo} onClick={closeMenu} ><Logo color={isDark ? "white" : "black"} /></div>
       <ThemeToggle />
-    </div>
+      <Navigation show={showMenu} closeMenu={closeMenu}/>
+      <Hamburger
+        onClick={() => setShowMenu((prevState) => !prevState)}
+        active={showMenu}
+      />
+    </header>
   );
 };
 

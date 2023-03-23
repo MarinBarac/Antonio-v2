@@ -1,0 +1,115 @@
+@import "@styles/variables.scss";
+
+.container {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: $white;
+  width: 70%;
+  min-height: 100vh;
+  border-right: 1px solid $grey-dark;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  padding-left: 24px;
+  padding-top: 149px;
+  z-index: 3;
+  transition: all 0.4s linear;
+  overflow: visible;
+
+  .listTitle {
+    margin-bottom: 16px;
+    color: $grey;
+    font-size: 12px;
+    line-height: 100%;
+  }
+
+  .links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .link a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      background-color: transparent;
+      border: 1px solid transparent;
+
+      // pass transition to all svg elements
+      & > * {
+        transition: all 0.2s linear;
+
+        & > * {
+          transition: inherit;
+        }
+      }
+
+      .label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: $grey;
+      }
+
+      &.active {
+        background-color: $grey-light;
+        border: 1px solid $grey-light;
+
+        .label {
+          color: $black;
+        }
+      }
+
+      &:hover {
+        .label {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.container.dark {
+  background-color: $black;
+  .links {
+    .link > a {
+      &.active {
+        background-color: $grey-light;
+        border-radius: 1px solid $grey;
+
+        .label {
+          color: $white;
+        }
+      }
+
+      &:hover {
+        .label {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.container.active {
+  left: 0;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  z-index: -10;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.4s linear;
+
+  &.active {
+    z-index: 2;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,14 @@
+@import "@styles/variables.scss";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid $grey-dark;
+
+    .logo {
+        position: relative;
+        z-index: 5;
+    }
+}
