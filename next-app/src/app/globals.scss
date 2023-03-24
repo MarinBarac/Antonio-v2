@@ -48,6 +48,7 @@ h3 {
 }
 
 p {
+  font-weight: 500;
   font-size: 16px;
   line-height: 150%;
 }
@@ -56,8 +57,18 @@ a {
   text-decoration: none;
 }
 
+.section {
+  max-width: 768px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: $desktop) {
   body {
     flex-direction: row;
+  }
+
+  main {
+    padding: 120px 24px;
   }
 }

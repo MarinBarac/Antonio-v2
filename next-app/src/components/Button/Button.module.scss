@@ -1,0 +1,39 @@
+@import "@styles/variables.scss";
+
+.button {
+  width: fit-content;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 6px;
+  color: $grey-dark;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.default {
+  background-color: $white;
+  border: 1px solid $grey-light;
+}
+
+.primary {
+  background-color: $primary;
+}
+
+.secondary {
+  background-color: $grey-ultra-light;
+}
+
+.default.dark {
+  background-color: $black;
+  color: $white;
+  border: 1px solid $grey-dark;
+}
+
+.secondary.dark {
+  background-color: $grey;
+  color: $white;
+}
