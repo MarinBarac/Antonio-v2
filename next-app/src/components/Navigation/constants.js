@@ -2,27 +2,27 @@ const { HomeIcon, ServicesIcon, UserIcon, ContactIcon, LinkedInIcon, DribbleIcon
 
 export const PAGE_LINKS = [
     {
-        href: '/',
+        href: '',
         label: 'Home',
         Icon: HomeIcon,
     },
     {
-        href: '/services',
+        href: 'services',
         label: 'Services',
         Icon: ServicesIcon,
     },
     {
-        href: '/projects',
+        href: 'projects',
         label: 'Projects',
         Icon: HomeIcon,
     },
     {
-        href: '/about',
+        href: 'about',
         label: 'About',
         Icon: UserIcon,
     },
     {
-        href: '/contact',
+        href: 'contact',
         label: 'Contact',
         Icon: ContactIcon,
     }

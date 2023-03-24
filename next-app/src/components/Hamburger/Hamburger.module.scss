@@ -2,8 +2,9 @@
 
 .container {
     position: relative;
-    width: 18px;
-    height: 12px;
+    width: 44px;
+    height: 40px;
+    padding: 12px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,19 +14,21 @@
     .bar {
         opacity: 1;
         width: 100%;
-        height: 1.65px;
+        height: 2px;
         background-color: $black;
         border-radius: 20px;
         transform: rotate(0deg);
+        transform-origin: center;
     }
 
     .first,
     .last {
         position: absolute;
+        width: 24px;
     }
 
     .first {
-        top: 0;
+        top: 10px;
         transition: transform .2s linear, top .2s .2s linear;
     }
 
@@ -34,7 +37,7 @@
     }
 
     .last {
-        bottom: 0;
+        bottom: 10px;
         transition: transform .2s linear, bottom .2s .2s linear;
     }
 }
@@ -52,7 +55,7 @@
     }
 
     .last {
-        bottom: calc(50% - 1.65px);
+        bottom: calc(50% - 2px);
         transform: rotate(-45deg);
         transition: bottom .2s linear, transform .2s .2s linear;
     }
@@ -61,5 +64,11 @@
 .container.dark {
     .bar {
         background-color: $white;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        display: none;
     }
 }

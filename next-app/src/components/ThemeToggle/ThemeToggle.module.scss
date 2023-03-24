@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: auto;
+    margin-right: 24px;
 
     .toggleContainer {
         position: relative;
@@ -36,5 +38,11 @@
             left: 1px;
             right: calc(51px - 27px - 1px);
         }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        margin: 0;
     }
 }

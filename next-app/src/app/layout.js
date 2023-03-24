@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeContextProvider } from "@context/context";
 import Navbar from "@components/Navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
+const inter = Inter({ subsets: ["latin"], weights: ["400", "500", "600"] });
 
 export const metadata = {
   title: "Create Next App",

@@ -18,6 +18,8 @@ body {
   height: 100vh;
   transition: all .2s linear;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -52,4 +54,10 @@ p {
 
 a {
   text-decoration: none;
+}
+
+@media screen and (min-width: $desktop) {
+  body {
+    flex-direction: row;
+  }
 }

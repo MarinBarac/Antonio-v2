@@ -13,12 +13,11 @@ const NavLink = ({ label, href, Icon, active, onClick, target = "" }) => {
 
   return (
     <li
-      className={clsx(styles.link, { [styles.active]: active })}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}
       onClick={onClick}
     >
-      <Link href={href}>
+      <Link href={href} className={clsx(styles.link, { [styles.active]: active })}>
         <Icon color={mouseOver || active ? activeColor : "#656867"} />
         <p className={styles.label}>{label}</p>
       </Link>

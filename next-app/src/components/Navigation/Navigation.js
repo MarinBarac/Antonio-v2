@@ -1,3 +1,4 @@
+import { useSelectedLayoutSegment } from "next/navigation";
 import ThemeContext from "@context/context";
 import clsx from "clsx";
 import { useContext } from "react";
@@ -6,8 +7,8 @@ import styles from "./Navigation.module.scss";
 import NavLink from "./NavLink";
 
 const Navigation = ({ show, closeMenu }) => {
+  const segment = useSelectedLayoutSegment() || '';
   const { isDark } = useContext(ThemeContext);
-
   return (
     <>
       <div
@@ -18,19 +19,33 @@ const Navigation = ({ show, closeMenu }) => {
       >
         <ul className={styles.links}>
           {PAGE_LINKS.map((link) => (
-            <NavLink key={`link-${link.label}`} {...link} onClick={closeMenu}/>
+            <NavLink
+              key={`link-${link.label}`}
+              {...link}
+              href={"/" + link.href}
+              active={segment === link.href}
+              onClick={closeMenu}
+            />
           ))}
         </ul>
         <div className={styles.bottomList}>
           <p className={styles.listTitle}>FOLLOW</p>
           <ul className={styles.links}>
             {SOCIAL_MEDIA.map((link) => (
-              <NavLink key={`link-${link.label}`} {...link} target="_blank" onClick={closeMenu}/>
+              <NavLink
+                key={`link-${link.label}`}
+                {...link}
+                target="_blank"
+                onClick={closeMenu}
+              />
             ))}
           </ul>
         </div>
       </div>
-      <div className={clsx(styles.backdrop, { [styles.active]: show })} onClick={closeMenu}/>
+      <div
+        className={clsx(styles.backdrop, { [styles.active]: show })}
+        onClick={closeMenu}
+      />
     </>
   );
 };
