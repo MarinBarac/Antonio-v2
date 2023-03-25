@@ -110,11 +110,12 @@
   opacity: 0;
   z-index: -10;
   background-color: rgba(0, 0, 0, 0.3);
-  transition: all 0.4s linear;
+  transition: opacity 0.4s linear, z-index 0.1s 0.4s linear;
 
   &.active {
     z-index: 2;
     opacity: 1;
+    transition: opacity 0.4s linear;
   }
 }
 

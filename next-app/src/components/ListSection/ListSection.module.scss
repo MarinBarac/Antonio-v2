@@ -1,0 +1,30 @@
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &.services {
+        gap: 48px;
+    }
+
+    .item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+
+        .image {
+            border-radius: 6px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            
+            .description {
+                font-weight: 400;
+            }
+        }
+    }
+}

@@ -33,12 +33,12 @@
 }
 
 .container.dark {
-    .text{
+    .text > *{
         color: $white;
     }
 }
 
-@media screen and (min-width: $tablet) {
+@media screen and (min-width: $desktop) {
     .container {
         align-items: flex-start;
         .text {

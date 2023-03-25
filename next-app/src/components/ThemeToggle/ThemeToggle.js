@@ -5,14 +5,20 @@ import { LightBulb, Moon } from "@components/icons";
 import ThemeContext from "@context/context";
 import { useContext, useEffect } from "react";
 
-import styles from './ThemeToggle.module.scss';
+import styles from "./ThemeToggle.module.scss";
 
 const ThemeToggle = () => {
   const { toggleTheme, isDark } = useContext(ThemeContext);
 
   useEffect(() => {
-    document.querySelector('body').style.backgroundColor = isDark ? "#151616" : "#FDFFFE"
-  }, [isDark])
+    const body = document.querySelector("body");
+    body.style.backgroundColor = isDark ? "#151616" : "#FDFFFE";
+    if (isDark) {
+      body.classList.add("dark");
+    } else {
+      body.classList.remove("dark");
+    }
+  }, [isDark]);
 
   return (
     <div className={clsx(styles.container, { [styles.dark]: isDark })}>

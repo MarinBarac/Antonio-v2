@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-import Avatar from "@assets/icons/avatar.svg";
+import Avatar from "@assets/images/avatar.png";
 
 import styles from "./HeroSection.module.scss";
 import Button from "@components/Button";

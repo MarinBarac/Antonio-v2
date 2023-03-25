@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 14px;
-    border-bottom: 1px solid $grey-dark;
+    border-bottom: 1px solid $grey-ultra-light;
 
     .logo {
         position: relative;
@@ -14,10 +14,13 @@
     }
 }
 
+.container.dark {
+    border-bottom: 1px solid $grey-dark;
+}
+
 @media screen and (min-width: $desktop) {
     .container {
         width: 267px;
-        height: 100%;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
