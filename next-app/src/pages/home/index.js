@@ -1,10 +1,12 @@
 import HeroSection from "./HeroSection";
+import TechnologySection from "./TechnologySection";
 import WorkSection from "./WorkSection";
 
 const HomePage = () => {
     return <>
         <HeroSection />
         <WorkSection />
+        <TechnologySection />
     </>
 }
 
