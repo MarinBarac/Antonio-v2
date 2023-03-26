@@ -22,11 +22,11 @@ const ThemeToggle = () => {
 
   return (
     <div className={clsx(styles.container, { [styles.dark]: isDark })}>
-      <Moon color={isDark ? "white" : "black"} />
+      <Moon color={isDark ? "white" : "#B8C3C0"} />
       <div className={styles.toggleContainer} onClick={() => toggleTheme()}>
         <div className={styles.knob} />
       </div>
-      <LightBulb color={isDark ? "white" : "black"} />
+      <LightBulb color={isDark ? "#B8C3C0" : "black"} />
     </div>
   );
 };
