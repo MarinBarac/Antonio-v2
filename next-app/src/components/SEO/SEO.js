@@ -25,7 +25,7 @@ const SEO = () => {
     <section className={clsx("section", styles.container)}>
         <SectionTitle
           title="SEO text that you don’t want to read"
-          description={SEO_TEXT.expand}
+          description={SEO_TEXT}
           descriptionClass="expandable"
           expanded={expand}
         />

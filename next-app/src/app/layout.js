@@ -2,6 +2,7 @@ import "./globals.scss";
 import { Inter } from "next/font/google";
 import { ThemeContextProvider } from "@context/context";
 import Navbar from "@components/Navbar/Navbar";
+import Footer from "@components/Footer";
 
 const inter = Inter({ subsets: ["cyrillic"], weights: ["400", "500", "600"] });
 
@@ -16,7 +17,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ThemeContextProvider>
           <Navbar />
-          <main>{children}</main>
+          <div className="content">
+            <main>{children}</main>
+            <Footer />
+          </div>
         </ThemeContextProvider>
       </body>
     </html>

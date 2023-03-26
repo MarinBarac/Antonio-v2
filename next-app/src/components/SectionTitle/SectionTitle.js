@@ -1,6 +1,7 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import clsx from "clsx";
 import styles from "./SectionTitle.module.scss";
+import ThemeContext from "@context/context";
 
 const SectionTitle = ({
   title,
@@ -9,6 +10,7 @@ const SectionTitle = ({
   descriptionClass,
   expanded,
 }) => {
+  const { isDark } = useContext(ThemeContext);
   const descriptionRef = useRef();
   const [descriptionHeight, setDescriptionHeight] = useState("auto");
 
@@ -23,9 +25,9 @@ const SectionTitle = ({
   }, [expanded, descriptionClass]);
 
   return (
-    <div className={styles.container}>
+    <div className={clsx(styles.container, { [styles.dark]: isDark })}>
       <h2 style={titleStyle}>{title}</h2>
-      <p
+      <div
         ref={descriptionRef}
         className={clsx(styles.description, {
           [styles.expandable]: descriptionClass,
@@ -34,7 +36,7 @@ const SectionTitle = ({
         style={{ height: `${descriptionHeight}` }}
       >
         {description}
-      </p>
+      </div>
     </div>
   );
 };

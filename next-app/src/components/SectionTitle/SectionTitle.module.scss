@@ -1,10 +1,14 @@
+@import "@styles/variables.scss";
+
 .container {
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   .description {
-    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey;
 
     &.expandable {
       display: -webkit-box;
@@ -18,4 +22,10 @@
       -webkit-line-clamp: initial;
     }
   }
+}
+
+.dark {
+    .description {
+        color: $grey-light;
+    }
 }

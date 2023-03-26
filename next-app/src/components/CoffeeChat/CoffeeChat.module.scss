@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding: 24px;
+    padding: 24px 24px 48px;
     border: 1px solid $grey-light;
     border-radius: 6px;
 
@@ -17,4 +17,10 @@
 
 .dark {
     border: 1px solid $grey-dark;
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        padding: 24px;
+    }
 }
