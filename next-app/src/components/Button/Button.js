@@ -1,33 +1,45 @@
 import ThemeContext from "@context/context";
 import clsx from "clsx";
 import Link from "next/link";
-import { useContext } from "react";
+import { forwardRef, useContext } from "react";
 import styles from "./Button.module.scss";
 
-const Button = ({ href, children, type = "submit", variant='default' }) => {
+const Button = forwardRef(
+  ({ href, children, type = "submit", variant = "default", onClick }, ref) => {
     const { isDark } = useContext(ThemeContext);
 
-  if (!href) {
+    if (!href) {
+      return (
+        <button
+          type={type}
+          ref={ref}
+          className={clsx(styles.button, styles[variant], {
+            [styles.dark]: isDark,
+          })}
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
+    }
+
     return (
-      <button
-        type={type}
-        className={clsx(styles.button, styles[variant], { [styles.dark]: isDark })}
-      >
-        {children}
-      </button>
+      <Link href={href}>
+        <button
+          ref={ref}
+          type={type}
+          className={clsx(styles.button, styles[variant], {
+            [styles.dark]: isDark,
+          })}
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      </Link>
     );
   }
+);
 
-  return (
-    <Link href={href}>
-      <button
-        type={type}
-        className={clsx(styles.button, styles[variant], { [styles.dark]: isDark  })}
-      >
-        {children}
-      </button>
-    </Link>
-  );
-};
+Button.displayName = "Button";
 
 export default Button;

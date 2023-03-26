@@ -1,4 +1,5 @@
 import CoffeeChat from "@components/CoffeeChat";
+import SEO from "@components/SEO/SEO";
 import HeroSection from "./HeroSection";
 import TechnologySection from "./TechnologySection";
 import WorkSection from "./WorkSection";
@@ -9,6 +10,7 @@ const HomePage = () => {
         <WorkSection />
         <TechnologySection />
         <CoffeeChat />
+        <SEO />
     </>
 }
 

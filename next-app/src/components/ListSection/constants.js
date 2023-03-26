@@ -15,12 +15,12 @@ export const LISTS = {
         },
         {
             image: Flixbus,
-            title: 'Flixbus',
+            title: 'FlixBus - Check out process',
             description: <>Worked on improving the checkout experience for one of the largest bus service companies.</>
         },
         {
             image: Foodrect,
-            title: 'Foodrect',
+            title: 'iOS Recipe App - Foodrec',
             description: <>Modern and clean concept of recipe app that tries to solve the main problem for most people: lack of idea for healthy food.</>
         }
     ],
