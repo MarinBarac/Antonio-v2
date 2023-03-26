@@ -24,6 +24,7 @@ body {
 
 main {
   width: 100%;
+  padding-inline: 24px;
 }
 
 h1,
@@ -63,7 +64,7 @@ a {
   max-width: 768px;
   overflow: hidden;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px 0px;
 }
 
 .dark {
@@ -84,7 +85,6 @@ a {
   }
 
   main {
-    padding-inline: 24px;
     margin: 120px 0;
   }
 

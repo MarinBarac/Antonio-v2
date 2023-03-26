@@ -15,6 +15,7 @@ const TechnologySection = () => {
   return (
     <section
       className={clsx("section", styles.container, { [styles.dark]: isDark })}
+      style={{padding: '24px'}}
     >
       <SectionTitle
         title="Stack"
