@@ -1,3 +1,4 @@
+import CoffeeChat from "@components/CoffeeChat";
 import HeroSection from "./HeroSection";
 import TechnologySection from "./TechnologySection";
 import WorkSection from "./WorkSection";
@@ -7,6 +8,7 @@ const HomePage = () => {
         <HeroSection />
         <WorkSection />
         <TechnologySection />
+        <CoffeeChat />
     </>
 }
 

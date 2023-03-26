@@ -14,9 +14,9 @@ const TechnologySection = () => {
 
   return (
     <section
-      className={clsx("section", styles.container, { [styles.dark]: isDark })}
-      style={{padding: '24px'}}
+      className={"section"}
     >
+      <div className={clsx(styles.container, { [styles.dark]: isDark })}>
       <SectionTitle
         title="Stack"
         description="Software and resources I use regularly."
@@ -25,6 +25,7 @@ const TechnologySection = () => {
       <div>
         <p className={styles.listTitle}>Additional skills</p>
         <List items={ADDITIONAL_SKILLS} />
+      </div>
       </div>
     </section>
   );
