@@ -1,5 +1,6 @@
 import PageTitle from "@components/PageTitle";
 import AboutSection from "./AboutSection";
+import CoffeeChat from "@components/CoffeeChat";
 
 const AboutPage = () => {
   return (
@@ -17,6 +18,7 @@ const AboutPage = () => {
         }
       />
       <AboutSection />
+      <CoffeeChat />
     </>
   );
 };
