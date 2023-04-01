@@ -5,7 +5,7 @@ import { forwardRef, useContext } from "react";
 import styles from "./Button.module.scss";
 
 const Button = forwardRef(
-  ({ href, children, type = "submit", variant = "default", onClick }, ref) => {
+  ({ href, children, type = "submit", variant = "default", style, onClick }, ref) => {
     const { isDark } = useContext(ThemeContext);
 
     if (!href) {
@@ -17,6 +17,7 @@ const Button = forwardRef(
             [styles.dark]: isDark,
           })}
           onClick={onClick}
+          style={style}
         >
           {children}
         </button>
@@ -32,6 +33,7 @@ const Button = forwardRef(
             [styles.dark]: isDark,
           })}
           onClick={onClick}
+          style={style}
         >
           {children}
         </button>

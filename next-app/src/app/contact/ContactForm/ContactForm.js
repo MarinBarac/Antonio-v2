@@ -101,7 +101,7 @@ const ContactForm = () => {
           label="Message"
           control={control}
         />
-        <Button variant="primary">
+        <Button variant="primary" style={{minWidth: '146px'}}>
           {isSending ? <LoadingSpinner /> : "Send message"}
         </Button>
       </form>
