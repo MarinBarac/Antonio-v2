@@ -1,5 +1,13 @@
 @import "@styles/variables.scss";
 
+:root {
+  --toastify-color-light: #F5F5F5;
+  --toastify-color-dark: #2F3030;
+  --toastify-text-color-light: #656867;
+  --toastify-text-color-dark: #fff;
+  --toastify-icon-color-success: #30D158;
+}
+
 *,
 *::after,
 *::before {

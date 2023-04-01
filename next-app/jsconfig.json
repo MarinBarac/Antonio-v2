@@ -4,9 +4,11 @@
     "paths": {
       "@assets/*": ["./public/assets/*"],
       "@components/*": ["components/*"],
+      "@config/*": ["config/*"],
       "@context/*": ["context/*"],
       "@styles/*": ["styles/*"],
-      "@modules/*": ["modules/*"]
+      "@modules/*": ["modules/*"],
+      "@services/*": ["services/*"]
     }
   }
 }

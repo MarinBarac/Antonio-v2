@@ -1,12 +1,21 @@
 "use client";
 
+import { useContext, useState } from "react";
 import clsx from "clsx";
-
+import { ToastContainer, toast } from "react-toastify";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+
 import FormInput from "./FormInput";
 import Button from "@components/Button";
+import LoadingSpinner from "@components/LoadingSpinner";
+import ThemeContext from "@context/context";
+import sendEmail from "@services/mail/sendEmail";
 
 import styles from "./ContactForm.module.scss";
+
+import "react-toastify/dist/ReactToastify.min.css";
 
 const defaultValues = {
   fullName: "",
@@ -14,7 +23,19 @@ const defaultValues = {
   message: "",
 };
 
+const formSchema = z.object({
+  fullName: z.string().min(1, { message: "Full name is required!" }),
+  email: z
+    .string()
+    .min(1, { message: "Email is required!" })
+    .email({ message: "Please enter valid email!" }),
+  message: z.string(),
+});
+
 const ContactForm = () => {
+  const { isDark } = useContext(ThemeContext);
+  const [isSending, setIsSending] = useState(false);
+
   const {
     handleSubmit,
     control,
@@ -22,11 +43,28 @@ const ContactForm = () => {
     isSubmitted,
     reset,
     formState: { errors },
-  } = useForm({ ...defaultValues });
+  } = useForm({
+    defaultValues: { ...defaultValues },
+    resolver: zodResolver(formSchema),
+  });
 
-  const onSubmit = () => {
-    console.log("submitted");
-    reset();
+  const onSubmit = async (data) => {
+    setIsSending(true);
+    try {
+      const response = await sendEmail({
+        url: "/api/contact",
+        mailData: { ...data },
+      });
+      if(!response) {
+        throw new Error();
+      }
+      toast.success("High five, you managed to send an email!");
+      reset();
+    } catch (error) {
+      toast.error("Fuck it. It didn't work. Say thanks to Marin.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -63,8 +101,16 @@ const ContactForm = () => {
           label="Message"
           control={control}
         />
-        <Button variant="primary">Send message</Button>
+        <Button variant="primary">
+          {isSending ? <LoadingSpinner /> : "Send message"}
+        </Button>
       </form>
+      <ToastContainer
+        autoClose={3000}
+        hideProgressBar={true}
+        position="bottom-left"
+        theme={isDark ? "dark" : "light"}
+      />
     </section>
   );
 };
