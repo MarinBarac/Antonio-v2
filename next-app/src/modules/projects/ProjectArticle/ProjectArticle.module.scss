@@ -1,0 +1,26 @@
+@import "@styles/variables.scss";
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: $tablet) {
+    .images {
+        flex-direction: row;
+    }
+}

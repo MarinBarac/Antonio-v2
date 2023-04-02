@@ -1,26 +1,39 @@
 @import "@styles/variables.scss";
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .prevLink {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 16px;
+    color: $grey;
+  }
 
-    h1 {
-        color: $black;
-    }
+  h1 {
+    color: $black;
+  }
 
-    p {
-        font-size: 18px;
-        color: $black;
-    }
+  p {
+    font-size: 18px;
+    color: $black;
+  }
 }
 
 .container.dark {
-    h1 {
-        color: $white;
-    }
+  .prevLink {
+    color: $grey-light;
+  }
+  
+  h1 {
+    color: $white;
+  }
 
-    p {
-        color: $white;
-    }
+  p {
+    color: $white;
+  }
 }
