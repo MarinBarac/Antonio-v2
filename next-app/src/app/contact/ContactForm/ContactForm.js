@@ -102,7 +102,7 @@ const ContactForm = () => {
           control={control}
         />
         <Button variant="primary" style={{minWidth: '146px'}}>
-          {true ? <LoadingSpinner /> : "Send message"}
+          {isSending ? <LoadingSpinner /> : "Send message"}
         </Button>
       </form>
       <ToastContainer
