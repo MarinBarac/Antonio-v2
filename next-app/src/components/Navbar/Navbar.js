@@ -15,7 +15,6 @@ const Navbar = () => {
   const { isDark } = useContext(ThemeContext);
 
   const closeMenu = () => {
-    console.log("closing");
     setShowMenu(false);
   };
 

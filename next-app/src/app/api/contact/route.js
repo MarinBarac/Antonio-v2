@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request) {
-  const { fullName, email, message, mailServiceConfiguration } = request.body;
+  const res = await request.json();
+  const { fullName, email, message, mailServiceConfiguration } = res;
   require("dotenv").config();
   const transporter = nodemailer.createTransport({
     ...mailServiceConfiguration,
@@ -17,7 +18,7 @@ export async function POST(request) {
     to: process.env.ANTONIO_EMAIL,
     replyTo: email,
     subject: `Portfolio message from ${fullName}`,
-    text: JSON.stringify(request.body) + " | Sent from: " + email,
+    text: JSON.stringify(res) + " | Sent from: " + email,
     html: `<div>
       <p><b>Sender: <b>${fullName}<p>
       <p><b>E-mail: <b>${email}<p>
@@ -27,12 +28,20 @@ export async function POST(request) {
 
   try {
     const info = await transporter.sendMail(mailData);
-    const response = NextResponse.json(info)
+    const response = NextResponse.json(info);
     response.headers.set("Content-Type", "application/json");
     response.headers.set("Cache-Control", "max-age=180000");
-    return response;
+    return new Response("Success", {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "max-age=180000",
+      },
+      body: JSON.stringify(info),
+    });
   } catch (error) {
-    const response = NextResponse.json(error)
-    return response;
+    return new Response("Failure", {
+      status: 500,
+    });
   }
 }
