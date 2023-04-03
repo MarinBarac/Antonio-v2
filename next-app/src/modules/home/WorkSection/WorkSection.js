@@ -5,6 +5,7 @@ import ListSection from "@components/ListSection";
 import SectionTitle from "@components/SectionTitle/SectionTitle";
 import clsx from "clsx";
 import styles from "./WorkSection.module.scss";
+import { PROJECTS } from "./constants";
 
 const WorkSection = () => {
   return (
@@ -14,7 +15,7 @@ const WorkSection = () => {
         description="Explore some of the work that I did and which I can share while not breaking an NDA."
         titleStyle={{ fontSize: "32px" }}
       />
-      <ListSection listName="projects" />
+      <ListSection list={PROJECTS} />
       <Button href="/projects">See more</Button>
     </section>
   );

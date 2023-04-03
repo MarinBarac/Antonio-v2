@@ -4,7 +4,7 @@ import ListSection from "@components/ListSection";
 import clsx from "clsx";
 import styles from "./ProjectsList.module.scss";
 
-const ProjectsList = () => {
+const ProjectsList = ({ list }) => {
   return (
     <section className={clsx("section", styles.container)}>
       <p>
@@ -18,7 +18,7 @@ const ProjectsList = () => {
         If you still want to see some of the work I did, explore case studies
         below.
       </p>
-      <ListSection listName="projects" />
+      <ListSection list={list} />
     </section>
   );
 };

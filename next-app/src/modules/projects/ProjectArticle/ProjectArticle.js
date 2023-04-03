@@ -5,7 +5,7 @@ import styles from "./ProjectArticle.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Button from "@components/Button";
 
-const ProjectArticle = ({ images, article }) => {
+const ProjectArticle = ({ images, article, dribbleLink }) => {
   return (
     <section className="section">
       <div className={styles.images}>
@@ -23,7 +23,7 @@ const ProjectArticle = ({ images, article }) => {
       <div className={styles.article}>
         {documentToReactComponents(article.json)}
       </div>
-      <Button>Read full case study</Button>
+      <Button href={dribbleLink}>Read full case study</Button>
     </section>
   );
 };

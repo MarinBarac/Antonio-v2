@@ -8,17 +8,17 @@ import ListItem from "./ListItem";
 
 import styles from "./ListSection.module.scss";
 
-const ListSection = ({ listName }) => {
+const ListSection = ({ list, className }) => {
   const { isDark } = useContext(ThemeContext);
 
   return (
     <ul
       className={clsx(styles.list, {
         [styles.dark]: isDark,
-        [styles.services]: listName === "services",
+        [styles[className]]: !!className,
       })}
     >
-        {LISTS[listName].map(item => <ListItem key={item.title} {...item}/>)}
+        {list.map(item => <ListItem key={item.title} {...item}/>)}
     </ul>
   );
 };

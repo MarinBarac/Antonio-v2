@@ -9,6 +9,9 @@ const callContentful = async (query) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ query }),
+    next: {
+      revalidate: 5,
+    },
   };
 
   try {
@@ -22,6 +25,9 @@ const callContentful = async (query) => {
 };
 
 export const getProjectPreviews = async () => {
+  require("dotenv").config();
+  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+
   const query = `{
         projectCollection {
         items {
@@ -34,13 +40,33 @@ export const getProjectPreviews = async () => {
                 height
             }    
         }
-    }}`;
+      }}`;
 
-  const response = await callContentful(query);
-  return response?.data?.projectCollection?.items;
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+      cache: 'no-store',
+    };
+  
+    try {
+      const response = await fetch(fetchUrl, fetchOptions).then((response) =>
+        response.json()
+      );
+      return response.data.projectCollection.items;
+    } catch (error) {
+      console.log(error);
+      throw new Error("Could not fetch data from Contentful!");
+    }
 };
 
 export const getProjectArticle = async (slug) => {
+  require("dotenv").config();
+  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+
   const query = `{
         projectCollection(where: {
             href: "${slug}"
@@ -48,6 +74,7 @@ export const getProjectArticle = async (slug) => {
         items {
             projectName
             description
+            dribbleLink
             articleImagesCollection {
                 items {
                   url,
@@ -61,6 +88,23 @@ export const getProjectArticle = async (slug) => {
         }
     }}`;
 
-  const response = await callContentful(query);
-  return response?.data?.projectCollection.items[0];
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+      cache: 'no-store',
+    };
+  
+    try {
+      const response = await fetch(fetchUrl, fetchOptions).then((response) =>
+        response.json()
+      );
+      return response.data.projectCollection.items[0];
+    } catch (error) {
+      console.log(error);
+      throw new Error("Could not fetch data from Contentful!");
+    }
 };
