@@ -14,12 +14,8 @@
     text-align: center;
 
     .title {
-      span > p {
-        display: inline;
+      span {
         color: $grey;
-        font-weight: 600;
-        font-size: 40px;
-        line-height: 120%;
       }
     }
 

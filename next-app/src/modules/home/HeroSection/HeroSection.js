@@ -7,13 +7,28 @@ import Avatar from "@assets/images/avatar.png";
 
 import styles from "./HeroSection.module.scss";
 import Button from "@components/Button";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import ThemeContext from "@context/context";
 import UselessButton from "./UselessButton/UselessButton";
-import Typical from "react-typical";
+import Typed from "typed.js";
 
 const HeroSection = () => {
+  const spanRef = useRef(null);
   const { isDark } = useContext(ThemeContext);
+
+  useEffect(() => {
+    const typed = new Typed(spanRef.current, {
+      strings: ['software.', 'apps.', 'websites.'],
+      typeSpeed: 60,
+      backSpeed: 80,
+      backDelay: 1000,
+      loop: true
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  })
 
   return (
     <section
@@ -28,7 +43,7 @@ const HeroSection = () => {
       <div className={styles.text}>
         <h1 className={styles.title}>
           Hey, I&apos;m Antonio.
-          <br />I design <span><Typical steps={["software.", 1000, "apps.", 1000, "websites.", 1000]} loop={Infinity} wrapper="p" /></span>
+          <br />I design <span ref={spanRef}></span>
         </h1>
         <p className={styles.description}>
           UX/UI designer from Split, Croatia.
