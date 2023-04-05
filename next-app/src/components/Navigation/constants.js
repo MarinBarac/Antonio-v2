@@ -32,16 +32,19 @@ export const SOCIAL_MEDIA = [
     {
         href: '/',
         label: 'LinkedIn',
-        Icon: LinkedInIcon
+        Icon: LinkedInIcon,
+        target: "_blank",
     },
     {
         href: '/',
         label: 'Dribble',
-        Icon: DribbleIcon
+        Icon: DribbleIcon,
+        target: "_blank",
     },
     {
         href: '/',
         label: 'Medium',
-        Icon: MediumIcon
+        Icon: MediumIcon,
+        target: "_blank",
     }
 ]

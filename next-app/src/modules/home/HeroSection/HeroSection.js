@@ -9,6 +9,8 @@ import styles from "./HeroSection.module.scss";
 import Button from "@components/Button";
 import { useContext } from "react";
 import ThemeContext from "@context/context";
+import UselessButton from "./UselessButton/UselessButton";
+import Typical from "react-typical";
 
 const HeroSection = () => {
   const { isDark } = useContext(ThemeContext);
@@ -26,7 +28,7 @@ const HeroSection = () => {
       <div className={styles.text}>
         <h1 className={styles.title}>
           Hey, I&apos;m Antonio.
-          <br />I design <span>software.</span>
+          <br />I design <span><Typical steps={["software.", 1000, "apps.", 1000, "websites.", 1000]} loop={Infinity} wrapper="p" /></span>
         </h1>
         <p className={styles.description}>
           UX/UI designer from Split, Croatia.
@@ -38,7 +40,7 @@ const HeroSection = () => {
         <Button href="/services" variant="primary">
           Services
         </Button>
-        <Button variant="secondary">Useless button</Button>
+        <UselessButton />
       </div>
     </section>
   );
