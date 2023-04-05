@@ -30,19 +30,19 @@ export const PAGE_LINKS = [
 
 export const SOCIAL_MEDIA = [
     {
-        href: '/',
+        href: 'https://www.linkedin.com/in/antonio-vidakovi%C4%87-331930125',
         label: 'LinkedIn',
         Icon: LinkedInIcon,
         target: "_blank",
     },
     {
-        href: '/',
+        href: 'https://dribbble.com/vida994',
         label: 'Dribble',
         Icon: DribbleIcon,
         target: "_blank",
     },
     {
-        href: '/',
+        href: 'https://medium.com/@avidakovic14',
         label: 'Medium',
         Icon: MediumIcon,
         target: "_blank",
