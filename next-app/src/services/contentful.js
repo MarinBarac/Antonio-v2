@@ -24,6 +24,46 @@ const callContentful = async (query) => {
   }
 };
 
+export const getLatesProjectPreviews = async () => {
+  require("dotenv").config();
+  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+
+  const query = `{
+        projectCollection(limit: 3) {
+        items {
+            projectName,
+            description,
+            slug,
+            previewImage {
+                url
+                width
+                height
+            }    
+        }
+      }}`;
+
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+      next: {
+        revalidate: 10,
+      }
+    };
+  
+    try {
+      const response = await fetch(fetchUrl, fetchOptions).then((response) =>
+        response.json()
+      );
+      return response.data.projectCollection.items;
+    } catch (error) {
+      throw new Error("Could not fetch data from Contentful!");
+    }
+};
+
 export const getProjectPreviews = async () => {
   require("dotenv").config();
   const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
@@ -49,7 +89,9 @@ export const getProjectPreviews = async () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ query }),
-      cache: 'no-store',
+      next: {
+        revalidate: 10,
+      }
     };
   
     try {
@@ -94,7 +136,9 @@ export const getProjectArticle = async (slug) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ query }),
-      cache: 'no-store',
+      next: {
+        revalidate: 10,
+      }
     };
   
     try {

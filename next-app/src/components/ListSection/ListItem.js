@@ -4,9 +4,10 @@ import Link from "next/link";
 import styles from './ListSection.module.scss';
 import clsx from "clsx";
 
-const ListItem = ({ title, description, price, image, slug }) => {
+const ListItem = ({ title, description, image, slug }) => {
   return (
-    <li className={styles.item}>
+    <li>
+      <Link href={`/projects/${slug || ''}`} className={clsx(styles.item, {[styles.disabled]: !slug})}>
       <Image
         src={image.url || image.src}
         alt={`${title}-image`}
@@ -15,10 +16,10 @@ const ListItem = ({ title, description, price, image, slug }) => {
         className={styles.image}
       />
       <div className={styles.text}>
-        <Link href={`/projects/${slug || ''}`} className={clsx({[styles.disabled]: !slug})}><h3 className={styles.title}>{title}</h3></Link>
-        {price && <p className={styles.price}>{`${price}€/hour*`}</p>}
+        <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
       </div>
+      </Link>
     </li>
   );
 };

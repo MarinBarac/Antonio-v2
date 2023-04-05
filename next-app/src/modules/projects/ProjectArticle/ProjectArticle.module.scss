@@ -1,8 +1,8 @@
 @import "@styles/variables.scss";
 
 .images {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 24px;
     margin-bottom: 24px;
 
@@ -21,6 +21,6 @@
 
 @media screen and (min-width: $tablet) {
     .images {
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
     }
 }

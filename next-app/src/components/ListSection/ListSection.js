@@ -3,7 +3,6 @@
 import ThemeContext from "@context/context";
 import clsx from "clsx";
 import { useContext } from "react";
-import { LISTS } from "./constants";
 import ListItem from "./ListItem";
 
 import styles from "./ListSection.module.scss";
