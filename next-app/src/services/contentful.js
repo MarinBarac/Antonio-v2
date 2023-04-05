@@ -33,7 +33,7 @@ export const getProjectPreviews = async () => {
         items {
             projectName,
             description,
-            href,
+            slug,
             previewImage {
                 url
                 width
@@ -58,7 +58,6 @@ export const getProjectPreviews = async () => {
       );
       return response.data.projectCollection.items;
     } catch (error) {
-      console.log(error);
       throw new Error("Could not fetch data from Contentful!");
     }
 };
@@ -69,7 +68,7 @@ export const getProjectArticle = async (slug) => {
 
   const query = `{
         projectCollection(where: {
-            href: "${slug}"
+            slug: "${slug}"
         }) {
         items {
             projectName
@@ -104,7 +103,6 @@ export const getProjectArticle = async (slug) => {
       );
       return response.data.projectCollection.items[0];
     } catch (error) {
-      console.log(error);
       throw new Error("Could not fetch data from Contentful!");
     }
 };

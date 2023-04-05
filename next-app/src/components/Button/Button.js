@@ -5,7 +5,7 @@ import { forwardRef, useContext } from "react";
 import styles from "./Button.module.scss";
 
 const Button = forwardRef(
-  ({ href, children, type = "submit", variant = "default", style, onClick }, ref) => {
+  ({ href, children, type = "submit", variant = "default", style, onClick, target="_self" }, ref) => {
     const { isDark } = useContext(ThemeContext);
 
     if (!href) {
@@ -25,7 +25,7 @@ const Button = forwardRef(
     }
 
     return (
-      <Link href={href}>
+      <Link href={href} target={target}>
         <button
           ref={ref}
           type={type}

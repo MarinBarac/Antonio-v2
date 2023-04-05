@@ -22,6 +22,10 @@
       flex-direction: column;
       gap: 8px;
 
+      a.disabled {
+        pointer-events: none;
+      }
+
       .description {
         display: -webkit-box;
         -webkit-line-clamp: 3;

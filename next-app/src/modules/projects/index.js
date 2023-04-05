@@ -8,7 +8,7 @@ export const revalidate = 24*3600;
 const ProjectsPage = async () => {
 
   const projects = await getProjectPreviews();
-  const projectsList = projects.map(project => ({image: project.previewImage, title: project.projectName, description: project.description, href: project.href}))
+  const projectsList = projects.map(project => ({image: project.previewImage, title: project.projectName, description: project.description, slug: project.slug}))
   return (
     <>
       <PageTitle

@@ -23,7 +23,7 @@ const ProjectArticle = ({ images, article, dribbleLink }) => {
       <div className={styles.article}>
         {documentToReactComponents(article.json)}
       </div>
-      <Button href={dribbleLink}>Read full case study</Button>
+      <Button href={dribbleLink} target="_blank">Read full case study</Button>
     </section>
   );
 };
