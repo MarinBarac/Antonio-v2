@@ -2,6 +2,7 @@ import CoffeeChat from "@components/CoffeeChat";
 import PageTitle from "@components/PageTitle";
 import ProjectArticle from "@modules/projects/ProjectArticle";
 import { getProjectArticle } from "@services/contentful";
+import OGImage from "@assets/images/opengraph-image.png";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }) {
     title: project.projectName,
     description: project.description,
     openGraph: {
+      images: [OGImage.src],
       url: `${process.env.SITE_URL}${slug}`,
       title: project.projectName,
       description: project.description,

@@ -4,7 +4,6 @@ import { ThemeContextProvider } from "@context/context";
 import Navbar from "@components/Navbar/Navbar";
 import Footer from "@components/Footer";
 import Script from "next/script";
-import OGImage from "@assets/images/opengraph-image.png";
 
 const inter = Inter({ subsets: ["cyrillic"], weights: ["400", "500", "600"] });
 
@@ -12,7 +11,6 @@ export const metadata = {
   charSet: "utf-8",
   viewport: "width=device-width, initial-scale=1",
   openGraph: {
-    images: [OGImage.src],
     siteName: "Antonio Vidakovic - UI/UX Designer",
   },
 };
