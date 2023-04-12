@@ -1,15 +1,36 @@
 import CoffeeChat from "@components/CoffeeChat";
 import PageTitle from "@components/PageTitle";
+import config from "@config/site";
 import ProjectArticle from "@modules/projects/ProjectArticle";
 import { getProjectArticle } from "@services/contentful";
+
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const project = await getProjectArticle(slug);
+
+  return {
+    title: project.projectName,
+    description: project.description,
+    openGraph: {
+      url: `${config.url}${slug}`,
+      title: project.projectName,
+      description: project.description,
+    },
+  };
+}
 
 export const revalidate = 5;
 
 const ProjectPage = async ({ params }) => {
   const { slug } = params;
-  const project = await getProjectArticle(slug);
-  const { projectName, description, articleImagesCollection, article, dribbleLink } =
-    project;
+  const {
+    projectName,
+    description,
+    articleImagesCollection,
+    article,
+    dribbleLink,
+  } = await getProjectArticle(slug);
+ 
 
   return (
     <>

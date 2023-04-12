@@ -15,7 +15,7 @@ export const SERVICES = [
     },
     {
         image: OneOnOne,
-        title: '1-on-1 training',
+        title: 'Figma 1-on-1 Coaching Session',
         description: <>This 1-on-1 coaching session on Figma covers all its features and is tailored to suit individuals with varying levels of experience on the platform.</>
     },
 ]

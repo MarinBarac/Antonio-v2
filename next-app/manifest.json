@@ -1,0 +1,68 @@
+{
+  "short_name": "Vidakovic Design",
+  "name": "Antonio Vidakovic - UI/UX Designer",
+  "icons": [
+    {
+      "src": "/app/safari-pinned-tab.svg",
+      "type": "image/svg+xml",
+      "sizes": "240x240"
+    },
+    {
+      "src": "/app/mstile.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    },
+    {
+      "src": "/app/android-chrome.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/app/apple-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/app/favicon2.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/app/favicon3.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#151616",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#151616",
+  "shortcuts": [
+    {
+      "name": "About Antonio",
+      "short_name": "About",
+      "description": "About page",
+      "url": "/about?source=pwa"
+    },
+    {
+      "name": "Anotio Contact",
+      "short_name": "Contact",
+      "description": "Contact page",
+      "url": "/contact?source=pwa"
+    },
+    {
+        "name": "Anotio Services",
+        "short_name": "Services",
+        "description": "Services page",
+        "url": "/services?source=pwa"
+    },
+    {
+        "name": "Anotio Projects",
+        "short_name": "Projects",
+        "description": "Projects page",
+        "url": "/projects?source=pwa"
+    }
+  ],
+  "description": "As a UX/UI designer, I create quality user experiences and interfaces that solve problems and improve products. Learn more about my process and see examples of my work. Contact me today to collaborate on your next project."
+}

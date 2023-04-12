@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    color: $black;
     text-align: center;
 
     .title {
@@ -29,12 +28,6 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-  }
-}
-
-.container.dark {
-  .text > * {
-    color: $white;
   }
 }
 

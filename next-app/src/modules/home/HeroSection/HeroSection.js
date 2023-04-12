@@ -1,60 +1,37 @@
-"use client";
-
-import clsx from "clsx";
 import Image from "next/image";
-
 import Avatar from "@assets/images/avatar.png";
+import Button from "@components/Button";
+import UselessButton from "./UselessButton/UselessButton";
+import TypedText from "./TypedText";
 
 import styles from "./HeroSection.module.scss";
-import Button from "@components/Button";
-import { useContext, useEffect, useRef } from "react";
-import ThemeContext from "@context/context";
-import UselessButton from "./UselessButton/UselessButton";
-import Typed from "typed.js";
+import Link from "next/link";
 
 const HeroSection = () => {
-  const spanRef = useRef(null);
-  const { isDark } = useContext(ThemeContext);
-
-  useEffect(() => {
-    const typed = new Typed(spanRef.current, {
-      strings: ['software.', 'apps.', 'websites.'],
-      typeSpeed: 60,
-      backSpeed: 80,
-      backDelay: 1000,
-      loop: true
-    });
-
-    return () => {
-      typed.destroy();
-    };
-  })
-
   return (
-    <section
-      className={clsx("section", styles.container, { [styles.dark]: isDark })}
-    >
+    <section className={`section ${styles.container}`}>
       <Image
         src={Avatar.src}
         alt="Avatar"
         width={Avatar.width}
         height={Avatar.height}
+        priority
       />
       <div className={styles.text}>
         <h1 className={styles.title}>
           Hey, I&apos;m Antonio.
-          <br />I design <span ref={spanRef}></span>
+          <br />I design <TypedText />
         </h1>
-        <p className={styles.description}>
+        <p className={`black-white ${styles.description}`}>
           UX/UI designer from Split, Croatia.
           <br />
           Coffee fan and Figma wizard.
         </p>
       </div>
       <div className={styles.buttons}>
-        <Button href="/services" variant="primary">
-          Services
-        </Button>
+        <Link href="/services">
+          <Button variant="primary">Services</Button>
+        </Link>
         <UselessButton />
       </div>
     </section>

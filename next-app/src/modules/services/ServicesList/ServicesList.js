@@ -1,14 +1,11 @@
-"use client";
-
 import ListSection from "@components/ListSection";
-import clsx from "clsx";
+import { SERVICES } from "./constants";
 
 import styles from "./ServicesList.module.scss";
-import { SERVICES } from "./constants";
 
 const ServicesList = () => {
   return (
-    <section className={clsx("section", styles.container)}>
+    <section className={`section ${styles.container}`}>
       <ListSection list={SERVICES} className="largeGap"/>
       <p>*All of the prices can vary depending of project length/scope.</p>
     </section>

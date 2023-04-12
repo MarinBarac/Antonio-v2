@@ -9,6 +9,7 @@ import LocasticLogo from "@assets/icons/locastic-logo.svg";
 
 import styles from "./AboutSection.module.scss";
 import { ABOUT_ANTONIO } from "./constants";
+import Link from "next/link";
 
 const AboutSection = () => {
   const { isDark } = useContext(ThemeContext);
@@ -26,17 +27,17 @@ const AboutSection = () => {
       />
       <p className={styles.shortText}>
         Currently, I&apos;m a UX/UI designer at
-        <Image
-          src={LocasticLogo.src}
-          alt="Locastic"
-          width={LocasticLogo.width}
-          height={LocasticLogo.height}
-          className={styles.logo}
-        />
+        <Link href="https://locastic.com/" target="_blank">
+          <Image
+            src={LocasticLogo.src}
+            alt="Locastic"
+            width={LocasticLogo.width}
+            height={LocasticLogo.height}
+            className={styles.logo}
+          />
+        </Link>
       </p>
-      <p className={styles.longText}>
-        {ABOUT_ANTONIO}
-      </p>
+      <p className={styles.longText}>{ABOUT_ANTONIO}</p>
     </section>
   );
 };

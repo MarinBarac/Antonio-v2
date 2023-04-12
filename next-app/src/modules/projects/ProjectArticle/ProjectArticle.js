@@ -1,9 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import styles from "./ProjectArticle.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Button from "@components/Button";
+
+import styles from "./ProjectArticle.module.scss";
 
 const ProjectArticle = ({ images, article, dribbleLink }) => {
   return (
