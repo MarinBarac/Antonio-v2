@@ -1,26 +1,6 @@
-@import "@styles/variables.scss";
-
-.images {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 24px;
-
-    .image {
-        width: 100%;
-        height: auto;
-    }
-}
-
 .article {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 24px;
-}
-
-@media screen and (min-width: $tablet) {
-    .images {
-        grid-template-columns: 1fr 1fr;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
 }
