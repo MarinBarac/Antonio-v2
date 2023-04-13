@@ -23,11 +23,6 @@
       "sizes": "150x150"
     },
     {
-      "src": "/app/android-chrome.png",
-      "type": "image/png",
-      "sizes": "144x144"
-    },
-    {
       "src": "/app/apple-icon.png",
       "type": "image/png",
       "sizes": "180x180"
