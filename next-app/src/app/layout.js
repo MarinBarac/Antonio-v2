@@ -29,7 +29,7 @@ export const generateMetadata = () => {
 export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "Person",
     name: "Antonio Vidakovic Design",
     image: GoogleImage.src,
     description:
