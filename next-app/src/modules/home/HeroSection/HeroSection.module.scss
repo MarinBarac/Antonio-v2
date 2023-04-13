@@ -6,6 +6,11 @@
   align-items: center;
   gap: 24px;
 
+  .avatar {
+    width: 110px;
+    height: 140px;
+  }
+
   .text {
     display: flex;
     flex-direction: column;

@@ -15,6 +15,7 @@ const HeroSection = () => {
         alt="Avatar"
         width={Avatar.width}
         height={Avatar.height}
+        className={styles.avatar}
         priority
       />
       <div className={styles.text}>
