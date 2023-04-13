@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import { ThemeContextProvider } from "@context/context";
 import Navbar from "@components/Navbar/Navbar";
 import Footer from "@components/Footer";
-import GoogleImage from '@assets/images/google.png';
+import GoogleImage from "@assets/images/google.png";
+import Favicon from "app/favicon.ico";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["cyrillic"], weights: ["400", "500", "600"] });
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="shortcut icon" href={Favicon.src} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
