@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeContextProvider } from "@context/context";
 import Navbar from "@components/Navbar/Navbar";
 import Footer from "@components/Footer";
+import GoogleImage from '@assets/images/google.png';
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["cyrillic"], weights: ["400", "500", "600"] });
@@ -12,7 +13,13 @@ export const generateMetadata = () => {
   return {
     charSet: "utf-8",
     viewport: "width=device-width, initial-scale=1",
-    keywords: ['UX/UI', 'Antonio Vidakovic Design', 'Antonio Vidakovic', 'UX/UI design', 'Website design'],
+    keywords: [
+      "UX/UI",
+      "Antonio Vidakovic Design",
+      "Antonio Vidakovic",
+      "UX/UI design",
+      "Website design",
+    ],
     formatDetection: {
       telephone: false,
     },
@@ -20,9 +27,22 @@ export const generateMetadata = () => {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Antonio Vidakovic Design",
+    image: GoogleImage.src,
+    description:
+      "As a UX/UI designer, I create quality user experiences and interfaces that solve problems and improve products. Learn more about my process and see examples of my work. Contact me today to collaborate on your next project.",
+  };
+
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"

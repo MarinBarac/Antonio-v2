@@ -10,5 +10,5 @@ export const openGraph = {
     }],
     type: 'website',
     locale: 'en-US',
-    url: 'https://vidakovic.design',
+    url: 'https://www.vidakovic.design/',
 }
