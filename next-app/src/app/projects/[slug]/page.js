@@ -2,17 +2,17 @@ import CoffeeChat from "@components/CoffeeChat";
 import PageTitle from "@components/PageTitle";
 import ProjectArticle from "@modules/projects/ProjectArticle";
 import { getProjectArticle } from "@services/contentful";
+import { openGraph } from "shared/sharedMetadata";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const project = await getProjectArticle(slug);
 
-  require("dotenv").config();
   return {
     title: project.projectName,
     description: project.description,
     openGraph: {
-      url: `${process.env.SITE_URL}${slug}`,
+      ...openGraph,
       title: project.projectName,
       description: project.description,
     },

@@ -7,22 +7,23 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["cyrillic"], weights: ["400", "500", "600"] });
 
-export const metadata = {
-  charSet: "utf-8",
-  viewport: "width=device-width, initial-scale=1",
-  formatDetection: {
-    telephone: false,
-  },
-  openGraph: {
-    siteName: "Antonio Vidakovic - UI/UX Designer",
-  },
+export const generateMetadata = () => {
+  require("dotenv").config();
+  return {
+    charSet: "utf-8",
+    viewport: "width=device-width, initial-scale=1",
+    keywords: ['UX/UI', 'Antonio Vidakovic Design', 'Antonio Vidakovic', 'UX/UI design', 'Website design'],
+    formatDetection: {
+      telephone: false,
+    },
+  };
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <Script
+        <Script
           id="google-tag-manager"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -53,8 +54,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://www.googletagmanager.com/gtag/js?id=AW-11119722550"
         />
         <Script
-        id="analytics"
-        strategy="afterInteractive"
+          id="analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
