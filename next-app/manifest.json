@@ -3,12 +3,12 @@
   "name": "Antonio Vidakovic - UI/UX Designer",
   "icons": [
     {
-      "src": "/app/android-chrome.png",
+      "src": "/app/icon3.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/app/android-chrome2.png",
+      "src": "/app/icon4.png",
       "sizes": "256x256",
       "type": "image/png"
     },
@@ -28,12 +28,12 @@
       "sizes": "180x180"
     },
     {
-      "src": "/app/icon2.png",
+      "src": "/app/icon1.png",
       "type": "image/png",
       "sizes": "16x16"
     },
     {
-      "src": "/app/icon3.png",
+      "src": "/app/icon2.png",
       "type": "image/png",
       "sizes": "32x32"
     }
