@@ -3,6 +3,16 @@
   "name": "Antonio Vidakovic - UI/UX Designer",
   "icons": [
     {
+      "src": "/app/android-chrome.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/app/android-chrome2.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
       "src": "/app/safari-pinned-tab.svg",
       "type": "image/svg+xml",
       "sizes": "240x240"
@@ -23,12 +33,12 @@
       "sizes": "180x180"
     },
     {
-      "src": "/app/favicon2.png",
+      "src": "/app/icon2.png",
       "type": "image/png",
       "sizes": "16x16"
     },
     {
-      "src": "/app/favicon3.png",
+      "src": "/app/icon3.png",
       "type": "image/png",
       "sizes": "32x32"
     }
@@ -52,16 +62,16 @@
       "url": "/contact?source=pwa"
     },
     {
-        "name": "Anotio Services",
-        "short_name": "Services",
-        "description": "Services page",
-        "url": "/services?source=pwa"
+      "name": "Anotio Services",
+      "short_name": "Services",
+      "description": "Services page",
+      "url": "/services?source=pwa"
     },
     {
-        "name": "Anotio Projects",
-        "short_name": "Projects",
-        "description": "Projects page",
-        "url": "/projects?source=pwa"
+      "name": "Anotio Projects",
+      "short_name": "Projects",
+      "description": "Projects page",
+      "url": "/projects?source=pwa"
     }
   ],
   "description": "As a UX/UI designer, I create quality user experiences and interfaces that solve problems and improve products. Learn more about my process and see examples of my work. Contact me today to collaborate on your next project."
