@@ -9,6 +9,7 @@ import clsx from "clsx";
 import { useContext, useState } from "react";
 
 import styles from "./Navbar.module.scss";
+import Link from "next/link";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,7 +22,9 @@ const Navbar = () => {
   return (
     <header className={clsx(styles.container, { [styles.dark]: isDark })}>
       <div className={styles.logo} onClick={closeMenu}>
-        <Logo color={isDark ? "white" : "black"} />
+        <Link href="/">
+          <Logo color={isDark ? "white" : "black"} />
+        </Link>
       </div>
       <ThemeToggle />
       <Navigation show={showMenu} closeMenu={closeMenu} />

@@ -33,8 +33,11 @@
   .swiper {
     position: relative;
     display: flex;
+    border-radius: 8px;
+    
     .swiperSlide {
       .image {
+        display: block;
         width: 100%;
         height: auto;
       }
