@@ -8,34 +8,30 @@ import SwiperArrow from "@assets/icons/swiper-arrow.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./SwiperPagination.scss";
 
 import styles from "./ImageSwiper.module.scss";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import clsx from "clsx";
 
 const ImageSwiper = ({ images }) => {
   const prevArrowRef = useRef(null);
   const nextArrowRef = useRef(null);
 
-  const pagination = {
-    renderBullet: function (index, className) {
-      return `<span class="${className} ${styles.bullet}"></span>`;
-    },
-  };
-
   return (
     <div className={styles.swiperContainer}>
       <Swiper
-        pagination={pagination}
         breakpoints={{
           1024: {
             simulateTouch: false,
           },
         }}
         navigation={{
-          nextEl: nextArrowRef.current,
-          prevEl: prevArrowRef.current,
+          nextEl: `#nextArrow`,
+          prevEl: `#prevArrow`,
+          clickable: true,
         }}
+        pagination={{ type: 'bullets' }}
         modules={[Pagination, Navigation]}
         className={styles.swiper}
         loop
@@ -53,15 +49,23 @@ const ImageSwiper = ({ images }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className={clsx(styles.arrowContainer, styles.nextArrow)} ref={nextArrowRef}>
+      <button
+        className={clsx(styles.arrowContainer, styles.nextArrow)}
+        id="nextArrow"
+        ref={nextArrowRef}
+      >
         <Image
           src={SwiperArrow.src}
           alt="Next"
           width={SwiperArrow.width}
           height={SwiperArrow.height}
         />
-      </div>
-      <div className={clsx(styles.arrowContainer, styles.prevArrow)} ref={prevArrowRef}>
+      </button>
+      <button
+        className={clsx(styles.arrowContainer, styles.prevArrow)}
+        id="prevArrow"
+        ref={prevArrowRef}
+      >
         <Image
           src={SwiperArrow.src}
           alt="Previous"
@@ -69,7 +73,7 @@ const ImageSwiper = ({ images }) => {
           height={SwiperArrow.height}
           className={styles.arrow}
         />
-      </div>
+      </button>
     </div>
   );
 };
