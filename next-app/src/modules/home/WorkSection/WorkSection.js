@@ -4,6 +4,7 @@ import SectionTitle from "@components/SectionTitle/SectionTitle";
 
 import styles from "./WorkSection.module.scss";
 import { getLatesProjectPreviews } from "@services/contentful";
+import Link from "next/link";
 
 const WorkSection = async () => {
   const projects = await getLatesProjectPreviews();
@@ -22,7 +23,7 @@ const WorkSection = async () => {
         titleStyle={{ fontSize: "32px" }}
       />
       <ListSection list={projectsList} />
-      <Button href="/projects">See more</Button>
+      <Link href="/projects"><Button>See more</Button></Link>
     </section>
   );
 };
