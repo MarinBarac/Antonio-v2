@@ -1,77 +1,88 @@
 @import "@styles/variables.scss";
 
 .container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -100%;
   background-color: $white;
   width: 70%;
-  min-height: 100vh;
+  height: 100vh;
   border-right: 1px solid $grey-dark;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: flex-start;
   padding-inline: 24px;
   padding-top: 69px;
   z-index: 3;
   transition: all 0.4s linear;
-  overflow: visible;
+  overflow: hidden;
 
-  .listTitle {
-    margin-bottom: 16px;
-    color: $grey;
-    font-size: 12px;
-    line-height: 100%;
-    margin-left: 8px;
-  }
-
-  .links {
-    width: 100%;
-    list-style: none;
+  .listsWrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 40px;
+    align-items: flex-start;
+    height: 100%;
+    overflow: auto;
+    z-index: 4;
 
-    .link {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .listTitle {
+      margin-bottom: 16px;
+      color: $grey;
+      font-size: 12px;
+      line-height: 100%;
+      margin-left: 8px;
+    }
+
+    .links {
+      width: 100%;
+      list-style: none;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 8px;
-      padding: 8px 12px;
-      cursor: pointer;
-      transition: all 0.2s linear;
-      background-color: transparent;
-      border: 1px solid transparent;
 
-      // pass transition to all svg elements
-      & > * {
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
         transition: all 0.2s linear;
+        background-color: transparent;
+        border: 1px solid transparent;
 
+        // pass transition to all svg elements
         & > * {
-          transition: inherit;
+          transition: all 0.2s linear;
+
+          & > * {
+            transition: inherit;
+          }
         }
-      }
-
-      .label {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
-        color: $grey;
-      }
-
-      &.active {
-        background-color: $grey-ultra-light;
-        border: 1px solid $grey-light;
-        border-radius: 6px;
 
         .label {
-          color: $black;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+          color: $grey;
         }
-      }
 
-      &:hover {
-        .label {
-          color: $black;
+        &.active {
+          background-color: $grey-ultra-light;
+          border: 1px solid $grey-light;
+          border-radius: 6px;
+
+          .label {
+            color: $black;
+          }
+        }
+
+        &:hover {
+          .label {
+            color: $black;
+          }
         }
       }
     }
@@ -80,20 +91,23 @@
 
 .container.dark {
   background-color: $black;
-  .links {
-    .link {
-      &.active {
-        background-color: $grey-dark;
-        border: 1px solid $grey;
 
-        .label {
-          color: $white;
+  .listsWrapper {
+    .links {
+      .link {
+        &.active {
+          background-color: $grey-dark;
+          border: 1px solid $grey;
+
+          .label {
+            color: $white;
+          }
         }
-      }
 
-      &:hover {
-        .label {
-          color: $white;
+        &:hover {
+          .label {
+            color: $white;
+          }
         }
       }
     }
@@ -134,8 +148,10 @@
       background-color: transparent;
     }
 
-    .links {
-      width: 100%;
+    .listsWrapper {
+      .links {
+        width: 100%;
+      }
     }
   }
 

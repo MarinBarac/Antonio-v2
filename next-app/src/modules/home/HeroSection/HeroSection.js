@@ -20,8 +20,8 @@ const HeroSection = () => {
       />
       <div className={styles.text}>
         <h1 className={styles.title}>
-          Hey, I&apos;m Antonio.
-          <br />I design <TypedText />
+          <span className={styles.row}>Hey, I&apos;m Antonio.</span>
+          <span className={styles.row}><span className={styles.normalText}>I design</span><TypedText /></span>
         </h1>
         <p className={`black-white ${styles.description}`}>
           UX/UI designer from Split, Croatia.

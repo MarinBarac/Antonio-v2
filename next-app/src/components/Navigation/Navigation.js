@@ -7,7 +7,7 @@ import styles from "./Navigation.module.scss";
 import NavLink from "./NavLink";
 
 const Navigation = ({ show, closeMenu }) => {
-  const segment = useSelectedLayoutSegment() || '';
+  const segment = useSelectedLayoutSegment() || "";
   const { isDark } = useContext(ThemeContext);
   return (
     <>
@@ -17,29 +17,31 @@ const Navigation = ({ show, closeMenu }) => {
           [styles.active]: show,
         })}
       >
-        <ul className={styles.links}>
-          {PAGE_LINKS.map((link) => (
-            <NavLink
-              key={`link-${link.label}`}
-              {...link}
-              href={"/" + link.href}
-              active={segment === link.href}
-              onClick={closeMenu}
-            />
-          ))}
-        </ul>
-        <div className={styles.bottomList}>
-          <p className={styles.listTitle}>FOLLOW</p>
+        <div className={styles.listsWrapper}>
           <ul className={styles.links}>
-            {SOCIAL_MEDIA.map((link) => (
+            {PAGE_LINKS.map((link) => (
               <NavLink
                 key={`link-${link.label}`}
                 {...link}
-                target="_blank"
+                href={"/" + link.href}
+                active={segment === link.href}
                 onClick={closeMenu}
               />
             ))}
           </ul>
+          <div className={styles.bottomList}>
+            <p className={styles.listTitle}>FOLLOW</p>
+            <ul className={styles.links}>
+              {SOCIAL_MEDIA.map((link) => (
+                <NavLink
+                  key={`link-${link.label}`}
+                  {...link}
+                  target="_blank"
+                  onClick={closeMenu}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div

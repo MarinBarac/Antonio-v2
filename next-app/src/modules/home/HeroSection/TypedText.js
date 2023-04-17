@@ -21,6 +21,6 @@ const TypedText = () => {
     };
   }, []);
 
-  return <span ref={spanRef}></span>;
+  return <span><span ref={spanRef}></span></span>;
 };
 export default TypedText;

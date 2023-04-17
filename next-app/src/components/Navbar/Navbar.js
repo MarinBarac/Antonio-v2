@@ -6,10 +6,20 @@ import Navigation from "@components/Navigation/Navigation";
 import ThemeToggle from "@components/ThemeToggle/ThemeToggle";
 import ThemeContext from "@context/context";
 import clsx from "clsx";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
+
+const useDisableBodyScroll = (open) => {
+  useEffect(() => {
+      if (open) {
+          document.body.style.overflow = 'hidden';
+      } else {
+          document.body.style.overflow = 'unset';
+      }
+  }, [open])
+} 
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,6 +28,8 @@ const Navbar = () => {
   const closeMenu = () => {
     setShowMenu(false);
   };
+
+  useDisableBodyScroll(showMenu);
 
   return (
     <header className={clsx(styles.container, { [styles.dark]: isDark })}>
