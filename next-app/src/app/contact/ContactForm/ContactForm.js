@@ -115,6 +115,7 @@ const ContactForm = () => {
         position="bottom-left"
         theme={isDark ? "dark" : "light"}
         closeButton={true}
+        closeOnClick={false}
       />
     </section>
   );
