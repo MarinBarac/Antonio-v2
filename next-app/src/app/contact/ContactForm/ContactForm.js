@@ -55,13 +55,17 @@ const ContactForm = () => {
         url: "/api/contact",
         mailData: { ...data },
       });
-      if(!response) {
+      if (!response) {
         throw new Error();
       }
-      toast.success("High five, you managed to send an email!");
+      toast.success("High five, you managed to send an email!", {
+        className: "success_toast",
+      });
       reset();
     } catch (error) {
-      toast.error("Fuck it. It didn't work. Say thanks to Marin.");
+      toast.error("Fuck it. It didn't work. Say thanks to Marin.", {
+        className: "fail-toast",
+      });
     } finally {
       setIsSending(false);
     }
@@ -101,15 +105,16 @@ const ContactForm = () => {
           label="Message"
           control={control}
         />
-        <Button variant="primary" style={{minWidth: '146px'}}>
+        <Button variant="primary" style={{ minWidth: "146px" }}>
           {isSending ? <LoadingSpinner /> : "Send message"}
         </Button>
       </form>
       <ToastContainer
-        autoClose={3000}
+        autoClose={false}
         hideProgressBar={true}
         position="bottom-left"
         theme={isDark ? "dark" : "light"}
+        closeButton={true}
       />
     </section>
   );
