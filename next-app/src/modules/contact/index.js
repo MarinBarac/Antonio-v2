@@ -1,5 +1,5 @@
 import PageTitle from "@components/PageTitle";
-import ContactForm from "app/contact/ContactForm";
+import ContactForm from "./ContactForm";
 
 const ContactPage = () => {
     return <>
