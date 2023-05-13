@@ -17,17 +17,6 @@
       pointer-events: none;
     }
 
-    .imageContainer {
-      position: relative;
-      min-width: 121px;
-      min-height: 108px;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      object-fit: fill;
-      border-radius: 6px;
-    }
-
     .text {
       display: flex;
       flex-direction: column;
@@ -41,11 +30,7 @@
       }
 
       .description {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-weight: 400;
+        max-width: 676px;
       }
     }
   }

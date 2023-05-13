@@ -1,21 +1,15 @@
-import UxUi from '@assets/images/services/ux-ui.png';
-import Consulting from '@assets/images/services/consulting.png';
-import OneOnOne from '@assets/images/services/one-on-one.png';
+import UxUi from '@assets/icons/services/ux-ui.svg';
+import FigmaCoaching from '@assets/icons/services/figma-coaching.svg';
 
 export const SERVICES = [
     {
         image: UxUi,
-        title: 'UX/UI design work',
-        description: <>I offer expert UX/UI design services to help transform your digital products into intuitive and visually appealing experiences that resonate with your target audience.</>
+        title: 'UX/UI design - B2B SaaS specialization',
+        description: <>Transforming complex products into intuitive solutions that help bridge the gap between you and your customer. Focused on achieving customer and company goals through a modern and uncluttered experience.</>
     },
     {
-        image: Consulting,
-        title: 'Consulting services - UX/UI',
-        description: <>As a freelance UX/UI designer, I help improve your digital product&apos;s user experience through tailored consulting services on user research, testing, interface design, and development.</>
-    },
-    {
-        image: OneOnOne,
-        title: 'Figma 1-on-1 Coaching Session',
-        description: <>This 1-on-1 coaching session on Figma covers all its features and is tailored to suit individuals with varying levels of experience on the platform.</>
+        image: FigmaCoaching,
+        title: 'Figma Coaching',
+        description: <>Tailored for both individuals and teams, and aim to enhance the collaborative potential of Figma. We cover all the fundamental and advanced features of Figma to ensure maximum productivity.</>
     },
 ]

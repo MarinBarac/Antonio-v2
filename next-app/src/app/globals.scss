@@ -32,8 +32,10 @@ body {
 
 main {
   width: 100%;
-  padding-inline: 24px;
-  margin: 24px 0;
+  padding: 120px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 h1,
@@ -80,10 +82,10 @@ a {
 }
 
 .section {
+  width: 100%;
   max-width: 768px;
   overflow: hidden;
   margin: 0 auto;
-  padding: 24px 0px;
 }
 
 .black-white {
@@ -113,11 +115,7 @@ a {
   }
 
   main {
-    margin: 120px 0 80px;
+    padding: 120px 0px;
   }
 
-  .section {
-    padding: 0;
-    margin-bottom: 40px;
-  }
 }

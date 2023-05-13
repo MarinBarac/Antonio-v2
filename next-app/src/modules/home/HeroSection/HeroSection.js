@@ -21,12 +21,15 @@ const HeroSection = () => {
       <div className={styles.text}>
         <h1 className={styles.title}>
           <span className={styles.row}>Hey, I&apos;m Antonio.</span>
-          <span className={styles.row}><span className={styles.normalText}>I design</span><TypedText /></span>
+          <span className={styles.row}>
+            <span className={styles.normalText}>I design</span>
+            <TypedText />
+          </span>
         </h1>
         <p className={`black-white ${styles.description}`}>
-          UX/UI designer from Split, Croatia.
+          UX/UI designer from Split, Croatia,
           <br />
-          Coffee fan and Figma wizard.
+          specializing in designing B2B SaaS.
         </p>
       </div>
       <div className={styles.buttons}>

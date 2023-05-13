@@ -11,9 +11,11 @@ const ListItem = ({ title, description, image, slug }) => {
         href={`/projects/${slug || ""}`}
         className={clsx(styles.item, { [styles.disabled]: !slug })}
       >
-        <div
-          className={styles.imageContainer}
-          style={{ backgroundImage: `url(${image.url || image.src})` }}
+        <Image
+          src={image.src}
+          alt={`${title} image`}
+          width={image.width}
+          height={image.height}
         />
         <div className={styles.text}>
           <h3 className={styles.title}>{title}</h3>
