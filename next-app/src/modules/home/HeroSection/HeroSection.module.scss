@@ -5,7 +5,6 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  overflow: visible;
 
   .avatar {
     width: 110px;
@@ -15,19 +14,23 @@
   .text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 16px;
     text-align: center;
     width: 100%;
 
     .title {
-      width: 100%;
+      width: fit-content;
       overflow: visible;
       display: flex;
       flex-direction: column;
+      align-items: center;
       flex-wrap: nowrap;
       flex: none;
 
       .row {
+        width: 100%;
+        max-width: 100%;
         position: relative;
         display: flex;
         flex: none;
@@ -37,8 +40,7 @@
         text-align: center;
         gap: 8px;
         overflow: visible;
-        max-width: 100%;
-        margin-inline: auto;
+
 
         span {
           color: $grey;
@@ -49,6 +51,7 @@
           width: fit-content;
           color: inherit;
           flex-shrink: 0;
+          align-self: flex-start;
         }
       }
     }
@@ -71,6 +74,7 @@
     align-items: flex-start;
     .text {
       text-align: left;
+      align-items: flex-start;
     
       .title {
         .row {
