@@ -2,15 +2,14 @@ import CoffeeChat from "@components/CoffeeChat";
 import SEO from "./SEO";
 import HeroSection from "./HeroSection";
 import TechnologySection from "./TechnologySection";
-import WorkSection from "./WorkSection";
-import { AreaOfExpertise } from "@components/AreaOfExpertise";
+import { ServicesSection } from "./ServicesSection";
 
 const HomePage = () => {
 
   return (
     <>
       <HeroSection />
-      <AreaOfExpertise title='Area of expertise'/>
+      <ServicesSection />
       <TechnologySection />
       <CoffeeChat />
       <SEO />

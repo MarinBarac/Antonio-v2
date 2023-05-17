@@ -5,9 +5,9 @@ import styles from "./ServicesList.module.scss";
 
 const ServicesList = () => {
   return (
-    <section className={`section ${styles.container}`}>
-      <ListSection list={SERVICES} className="largeGap"/>
-    </section>
+    <div className={styles.container}>
+      <ListSection list={SERVICES}/>
+    </div>
   );
 };
 

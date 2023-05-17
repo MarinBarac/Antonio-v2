@@ -33,8 +33,8 @@ const HeroSection = () => {
         </p>
       </div>
       <div className={styles.buttons}>
-        <Link href="/services">
-          <Button variant="primary">Services</Button>
+        <Link href="/about">
+          <Button variant="primary">Who is Antonio?</Button>
         </Link>
         <UselessButton />
       </div>

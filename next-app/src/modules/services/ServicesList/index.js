@@ -1,3 +1,9 @@
 import ServicesList from "./ServicesList";
 
-export default ServicesList;
+const ServicesListSection = () => {
+    return <section className="section">
+        <ServicesList />
+    </section>
+}
+
+export default ServicesListSection;
