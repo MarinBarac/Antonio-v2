@@ -37,7 +37,7 @@ export const SOCIAL_MEDIA = [
     },
     {
         href: 'https://dribbble.com/vida994',
-        label: 'Dribble',
+        label: 'Dribbble',
         Icon: DribbleIcon,
         target: "_blank",
     },
