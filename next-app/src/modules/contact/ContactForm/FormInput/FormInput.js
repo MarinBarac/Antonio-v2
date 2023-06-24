@@ -15,7 +15,6 @@ const FormInput = ({
 }) => {
   const containerClass = clsx({
     [styles.container]: true,
-    [styles.dark]: isDark,
     [styles.showError]: error,
   });
 
