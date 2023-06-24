@@ -1,15 +1,13 @@
 "use client";
 
-import { useContext, useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import clsx from "clsx";
 import Button from "@components/Button";
 import { SEO_TEXT } from "./contants";
 
 import styles from "./SEO.module.scss";
-import ThemeContext from "@context/context";
 
 const SEO = () => {
-  const { isDark } = useContext(ThemeContext);
   const [expand, setExpand] = useState(false);
   const [descriptionHeight, setDescriptionHeight] = useState("auto");
   const btnRef = useRef();
@@ -36,7 +34,7 @@ const SEO = () => {
 
   return (
     <section className={clsx("section", styles.container)}>
-      <div className={clsx(styles.text, { [styles.dark]: isDark })}>
+      <div className={clsx(styles.text)}>
         <h2>SEO text that you don&apos;t want to read</h2>
         <div
           ref={descriptionRef}

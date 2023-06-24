@@ -1,15 +1,11 @@
-import ThemeContext from "@context/context";
 import clsx from "clsx";
 import { useContext } from "react";
 import styles from "./Hamburger.module.scss";
 
 const Hamburger = ({ active, onClick }) => {
-  const { isDark } = useContext(ThemeContext);
-
   return (
     <div
       className={clsx(styles.container, {
-        [styles.dark]: isDark,
         [styles.active]: active,
       })}
       onClick={onClick}

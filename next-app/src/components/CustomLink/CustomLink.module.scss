@@ -1,0 +1,42 @@
+@import "@styles/variables.scss";
+
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s linear;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.default {
+  color: $light;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.withArrow {
+  padding: 0px 32px;
+  font-size: 16px;
+  line-height: 120%;
+  color: $primary;
+
+  &:hover {
+    p {
+      text-decoration: underline;
+    }
+  }
+}
+
+.underline {
+  color: $light;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

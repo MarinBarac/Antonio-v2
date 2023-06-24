@@ -5,37 +5,23 @@
   justify-content: center;
   width: fit-content;
   text-align: center;
-  padding: 14px 16px;
-  border-radius: 6px;
-  color: $grey-dark;
+  padding: 16px 32px;
+  color: $black;
+  background-color: $primary;
+  border-radius: 32px;
   outline: 0;
   border: none;
   cursor: pointer;
   font-weight: 600;
   font-size: 16px;
-  line-height: 100%;
-}
+  line-height: 120%;
+  transition: all 0.3s linear;
 
-.default {
-  background-color: $white;
-  border: 1px solid $grey-light;
-}
+  &:hover {
+    background-color: $primary-dark;
+  }
 
-.primary {
-  background-color: $primary;
-}
-
-.secondary {
-  background-color: $grey-ultra-light;
-}
-
-.default.dark {
-  background-color: $black;
-  color: $white;
-  border: 1px solid $grey-dark;
-}
-
-.secondary.dark {
-  background-color: transparent;
-  color: $white;
+  &:disabled {
+    opacity: 0.4;
+  }
 }

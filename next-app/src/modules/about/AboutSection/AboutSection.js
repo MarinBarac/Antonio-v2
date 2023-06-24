@@ -1,9 +1,7 @@
 "use client";
 
-import { useContext } from "react";
 import clsx from "clsx";
 import Image from "next/image";
-import ThemeContext from "@context/context";
 import AntonioImage from "@assets/images/about.png";
 import LocasticLogo from "@assets/icons/locastic-logo.svg";
 
@@ -12,11 +10,9 @@ import { ABOUT_ANTONIO } from "./constants";
 import Link from "next/link";
 
 const AboutSection = () => {
-  const { isDark } = useContext(ThemeContext);
-
   return (
     <section
-      className={clsx("section", styles.container, { [styles.dark]: isDark })}
+      className={clsx("section", styles.container)}
     >
       <Image
         src={AntonioImage.src}

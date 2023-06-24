@@ -24,6 +24,7 @@ body {
 body {
   width: 100%;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;;
   transition: all 0.2s linear;
   z-index: 1;
   display: flex;
@@ -59,19 +60,8 @@ h3 {
   line-height: 150%;
 }
 
-p {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: $grey;
-}
-
 a {
   text-decoration: none;
-}
-
-.text {
-  color: $grey;
 }
 
 .content {
@@ -86,56 +76,4 @@ a {
   margin: 0 auto;
   padding: 24px;
   overflow-x: visible;
-
-  &:first-child {
-    padding: 48px 24px;
-  }
-
-  &:last-child {
-    padding-bottom: 48px;
-  }
-}
-
-.black-white {
-  color: $black;
-}
-
-.dark {
-  h1,
-  h2,
-  h3 {
-    color: $white;
-  }
-
-  p,
-  .text {
-    color: $grey-light;
-  }
-
-  .black-white {
-    color: $white;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  body {
-    flex-direction: row;
-  }
-
-  main {
-    gap: 40px;
-    padding: 120px 24px;
-  }
-
-  .section {
-    padding: 0px;
-
-    &:first-child {
-      padding: 0px;
-    }
-
-    &:last-child {
-      padding-bottom: 0px;
-    }
-  }
 }

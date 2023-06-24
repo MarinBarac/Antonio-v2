@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { ToastContainer, toast } from "react-toastify";
 import { z } from "zod";
@@ -10,7 +10,6 @@ import { useForm } from "react-hook-form";
 import FormInput from "./FormInput";
 import Button from "@components/Button";
 import LoadingSpinner from "@components/LoadingSpinner";
-import ThemeContext from "@context/context";
 import sendEmail from "@services/mail/sendEmail";
 
 import styles from "./ContactForm.module.scss";
@@ -33,7 +32,6 @@ const formSchema = z.object({
 });
 
 const ContactForm = () => {
-  const { isDark } = useContext(ThemeContext);
   const [isSending, setIsSending] = useState(false);
 
   const {
@@ -113,7 +111,7 @@ const ContactForm = () => {
         autoClose={false}
         hideProgressBar={true}
         position="bottom-left"
-        theme={isDark ? "dark" : "light"}
+        theme={"dark"}
         closeButton={true}
         closeOnClick={false}
       />

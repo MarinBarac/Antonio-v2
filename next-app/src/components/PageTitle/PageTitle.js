@@ -1,8 +1,6 @@
 "use client";
 
-import ThemeContext from "@context/context";
 import clsx from "clsx";
-import { useContext } from "react";
 
 import styles from "./PageTitle.module.scss";
 import { LeftArrow } from "@components/icons";
@@ -10,11 +8,10 @@ import { useRouter } from "next/navigation";
 
 const PageTitle = ({ title, description, prevLink }) => {
   const router = useRouter();
-  const { isDark } = useContext(ThemeContext);
 
   return (
     <section
-      className={clsx("section", styles.container, { [styles.dark]: isDark })}
+      className={clsx("section", styles.container)}
     >
       {prevLink && (
         <p onClick={() => router.back()} className={styles.prevLink}>

@@ -1,8 +1,6 @@
 import clsx from "clsx";
 import { Controller } from "react-hook-form";
 import styles from "./FormInput.module.scss";
-import { useContext } from "react";
-import ThemeContext from "@context/context";
 
 const FormInput = ({
   control,
@@ -15,7 +13,6 @@ const FormInput = ({
   formSubmitted,
   error,
 }) => {
-  const { isDark } = useContext(ThemeContext);
   const containerClass = clsx({
     [styles.container]: true,
     [styles.dark]: isDark,

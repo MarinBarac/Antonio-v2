@@ -24,11 +24,11 @@
     font-size: 16px;
     line-height: 24px;
     color: $black;
-    background-color: $grey-ultra-light;
+    background-color: $grey;
     transition: border 0.2s linear;
 
     &::placeholder {
-      color: $grey-light;
+      color: $grey;
     }
 
     &:focus,
@@ -45,7 +45,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: $grey-light;
+        background-color: $grey;
         border-radius: 8px;
       }
     }
@@ -53,13 +53,9 @@
 
   .error {
     display: none;
-    color: $red;
   }
 
   &.showError {
-    .input {
-      border: 2px solid $red;
-    }
 
     .error {
       display: block;
