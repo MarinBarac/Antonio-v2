@@ -1,26 +1,14 @@
-"use client";
-
-import clsx from "clsx";
-
 import styles from "./PageTitle.module.scss";
-import { LeftArrow } from "@components/icons";
-import { useRouter } from "next/navigation";
+import PageTitleImage from "./PageTitleImage";
 
-const PageTitle = ({ title, description, prevLink }) => {
-  const router = useRouter();
-
+const PageTitle = ({ title, description, withImage }) => {
   return (
-    <section
-      className={clsx("section", styles.container)}
-    >
-      {prevLink && (
-        <p onClick={() => router.back()} className={styles.prevLink}>
-          <LeftArrow color={isDark ? "#B8C3C0" : "#656867"}/>
-          Take me back
-        </p>
-      )}
+    <section className={`${styles.container} ${withImage && styles.withImage}`}>
       <h1>{title}</h1>
-      <p>{description}</p>
+      <p className={`largeText ${styles.description}`}>{description}</p>
+      {withImage && (
+        <PageTitleImage />
+      )}
     </section>
   );
 };

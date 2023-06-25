@@ -1,0 +1,54 @@
+@import "@styles/variables.scss";
+
+.container {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 22px 88px  1fr;
+  grid-template-rows: 1fr 1fr .5fr 19px 1fr;
+
+  .textContainer {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    .text {
+      padding: 4px 12px;
+      background-color: $primary;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 100%;
+      color: $black;
+    }
+
+    .svg {
+      position: absolute;
+      top: -120%;
+      right: -30%;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}

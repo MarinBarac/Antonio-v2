@@ -2,25 +2,49 @@
 
 .container {
   display: flex;
+  padding: 40px 20px;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
+  align-items: center;
+  text-align: center;
+  background-color: $black;
 
-  .prevLink {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 16px;
-    line-height: 16px;
+  &.withImage {
+    padding: 40px 20px 0px;
+  }
+
+  .description {
     color: $grey;
-    cursor: pointer;
+    white-space: pre-line;
   }
 
-  h1 {
-    color: $black;
+  .image {
+    width: 100%;
+    height: auto;
   }
+}
 
-  p {
-    font-size: 18px;
-    color: $black;
+@media screen and (min-width: $tablet) {
+  .container {
+    padding: 140px 20px 90px;
+
+    &.withImage {
+      padding: 140px 20px 0px;
+    }
+
+    h1 {
+      display: block;
+      max-width: 616px;
+    }
+
+    .description {
+      display: block;
+      max-width: 523px;
+    }
+
+    .image {
+      width: auto;
+      height: auto;
+    }
   }
 }
