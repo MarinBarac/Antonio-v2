@@ -17,6 +17,7 @@ const Footer = () => {
             </li>
           ))}
         </ul>
+        <div className={styles.dividerLine}/>
         <ul className={styles.socialMedia}>
           {SOCIAL_MEDIA_LINKS.map((link) => (
             <li key={link.key}>
