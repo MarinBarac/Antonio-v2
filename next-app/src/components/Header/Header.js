@@ -3,16 +3,7 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 import { HEADER_LINKS } from "./constants";
 import CustomLink from "@components/CustomLink";
-
-const useDisableBodyScroll = (open) => {
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "unset";
-    }
-  }, [open]);
-};
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   return (
@@ -31,6 +22,7 @@ const Header = () => {
         <Link href="/contact" className={styles.contactBtn}>
           Contact me
         </Link>
+        <MobileMenu />
       </div>
     </header>
   );

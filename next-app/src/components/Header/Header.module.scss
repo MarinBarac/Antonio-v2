@@ -3,6 +3,7 @@
 .header {
   width: 100%;
   background-color: $black;
+  padding: 24px 20px 0px;
 
   .content {
     max-width: 928px;
@@ -10,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 0px;
+    padding: 16px 0px;
 
     .logo {
       font-size: 24px;
@@ -20,12 +21,13 @@
     }
 
     .links {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 32px;
     }
 
     .contactBtn {
+      display: none;
       padding: 4px 8px;
       background-color: $primary;
       border-radius: 32px;
@@ -36,6 +38,24 @@
 
       &:hover {
         background-color: $primary-dark;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .header {
+    padding: 0px 20px;
+
+    .content {
+      padding: 24px 0px;
+
+      .links {
+        display: flex;
+      }
+
+      .contactBtn {
+        display: block;
       }
     }
   }
