@@ -3,6 +3,7 @@
 .link {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.3s linear;
@@ -21,6 +22,7 @@
 }
 
 .withArrow {
+  width: 100%;
   padding: 0px 32px;
   font-size: 16px;
   line-height: 120%;
@@ -38,5 +40,11 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .withArrow {
+    width: fit-content;
   }
 }

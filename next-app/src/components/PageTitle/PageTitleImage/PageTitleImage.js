@@ -5,7 +5,6 @@ import { CvImage } from "shared/assets/images";
 import styles from './PageTitleImage.module.scss';
 
 const PageTitleImage = () => {
-  console.log('Cv image: ' + CvImage.src);
   return (
     <div className={styles.container}>
         <div className={styles.textContainer}>

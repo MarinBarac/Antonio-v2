@@ -1,0 +1,23 @@
+@import "@styles/variables.scss";
+
+.list {
+  list-style: none;
+  width: 100%;
+  max-width: 928px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  gap: 24px;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+
+    & > li:first-child {
+      grid-column: 1/1;
+      grid-row: 1/-1;
+    }
+  }
+}
