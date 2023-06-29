@@ -2,6 +2,7 @@ import { ServicesSection } from "./ServicesSection";
 import PageTitle from "@components/PageTitle";
 import BookACallSection from "@components/BookACallSection";
 import ProjectsSection from "./ProjectsSection.js";
+import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
 
 const HomePage = () => {
   return (
@@ -17,11 +18,7 @@ const HomePage = () => {
       />
       <ProjectsSection />
       <ServicesSection />
-      <BookACallSection
-        title={`Ready to talk about your project?`}
-        description={`Schedule a 30 minutes free call or send an email and get an ball-park estimate for your project.`}
-        type="largeText"
-      />
+      <ReadyToTalkSection />
     </>
   );
 };

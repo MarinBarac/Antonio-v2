@@ -1,3 +1,10 @@
+import {
+  AboutFour,
+  AboutOne,
+  AboutThree,
+  AboutTwo,
+} from "shared/assets/images";
+
 export const ABOUT_ANTONIO = (
   <>
     A self-taught UI/UX designer, functioning in the industry for 4+ years now,
@@ -7,8 +14,9 @@ export const ABOUT_ANTONIO = (
     <br />
     <br />
     In my early twenties started to work as a freelance graphic designer doing
-    ugly club flyers in Photoshop. Between then and now, I finish my bachelor&apos;s
-    in Business economics and master&apos;s in Marketing and communication.
+    ugly club flyers in Photoshop. Between then and now, I finish my
+    bachelor&apos;s in Business economics and master&apos;s in Marketing and
+    communication.
     <br />
     <br />
     Almost three years ago, I bet with my software dev. girlfriend that I can
@@ -17,9 +25,9 @@ export const ABOUT_ANTONIO = (
     <br />
     <br />
     After finishing the course and getting a job offer for iOS dev, I decided
-    that I&apos;m not into typing code all day long, but I also didn&apos;t want to move
-    from the IT sector. And when you mix graphic design and IT, you get a
-    beautiful and expensive cocktail named: UX/UI design.
+    that I&apos;m not into typing code all day long, but I also didn&apos;t want
+    to move from the IT sector. And when you mix graphic design and IT, you get
+    a beautiful and expensive cocktail named: UX/UI design.
     <br />
     <br />
     To fully leverage my business-side brain, I finished the Dribbble course for
@@ -31,3 +39,5 @@ export const ABOUT_ANTONIO = (
     marketing sites) at my current company and as a freelance.
   </>
 );
+
+export const IMAGES = [AboutOne, AboutTwo, AboutThree, AboutFour];

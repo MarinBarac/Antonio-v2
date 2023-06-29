@@ -12,7 +12,7 @@ const BookACallSection = ({ title, description, type }) => {
     <section className="section">
       <div className={styles.container}>
         <h2
-          className={`${type === "largeText" ? "h1" : "h3"} ${
+          className={`${type === "largeText" ? "h2" : "h3"} ${
             type === "largeText" && styles.large
           }`}
         >
