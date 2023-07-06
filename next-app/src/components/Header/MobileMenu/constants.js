@@ -1,5 +1,9 @@
 export const MOBILE_LINKS = [
   {
+    href: "/",
+    text: "Home",
+  },
+  {
     href: "/services",
     text: "Services",
   },

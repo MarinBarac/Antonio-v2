@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { ABOUT_ANTONIO, IMAGES } from "./constants";
+import { IMAGES } from "./constants";
 import styles from "./MainSection.module.scss";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const AboutSection = () => {
+const AboutSection = ({ article }) => {
   return (
     <section className="section">
       <div className={styles.container}>
-        <p className="p3">{ABOUT_ANTONIO}</p>
+        <div className={`p3 ${styles.article}`}>{documentToReactComponents(article.json)}</div>
         <ul className={styles.imagesList}>
           {IMAGES.map((image, index) => (
             <li

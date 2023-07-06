@@ -11,7 +11,7 @@
   .links {
     width: 100%;
     list-style: none;
-    max-width: 928px;
+    max-width: $max-content-width;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

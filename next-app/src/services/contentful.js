@@ -1,4 +1,4 @@
-const callContentful = async (query) => {
+export const callContentful = async (query) => {
   require("dotenv").config();
   const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
 
@@ -10,7 +10,7 @@ const callContentful = async (query) => {
     },
     body: JSON.stringify({ query }),
     next: {
-      revalidate: 5,
+      revalidate: 60,
     },
   };
 
@@ -30,46 +30,6 @@ export const getLatesProjectPreviews = async () => {
 
   const query = `{
         projectCollection(limit: 3) {
-        items {
-            projectName,
-            description,
-            slug,
-            previewImage {
-                url
-                width
-                height
-            }    
-        }
-      }}`;
-
-    const fetchOptions = {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query }),
-      next: {
-        revalidate: 10,
-      }
-    };
-  
-    try {
-      const response = await fetch(fetchUrl, fetchOptions).then((response) =>
-        response.json()
-      );
-      return response.data.projectCollection.items;
-    } catch (error) {
-      throw new Error("Could not fetch data from Contentful!");
-    }
-};
-
-export const getProjectPreviews = async () => {
-  require("dotenv").config();
-  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
-
-  const query = `{
-        projectCollection {
         items {
             projectName,
             description,

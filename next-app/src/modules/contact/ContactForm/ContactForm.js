@@ -71,42 +71,40 @@ const ContactForm = () => {
 
   return (
     <section className={clsx("section", styles.container)}>
-      <p className={styles.description}>
-        If you are not into video calls and all those things, I will check my
-        Inbox.
-      </p>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <FormInput
-          control={control}
-          name="fullName"
-          type="text"
-          placeHolder="Chuck Norris"
-          label="Full name"
-          trigger={trigger}
-          formSubmitted={isSubmitted}
-          error={errors.fullName}
-        />
-        <FormInput
-          control={control}
-          name="email"
-          type="text"
-          placeHolder="you@company.com"
-          label="Email"
-          trigger={trigger}
-          formSubmitted={isSubmitted}
-          error={errors.email}
-        />
-        <FormInput
-          type="textarea"
-          name="message"
-          placeHolder="Leave funny message or not..."
-          label="Message"
-          control={control}
-        />
-        <Button variant="primary" style={{ minWidth: "146px" }}>
-          {isSending ? <LoadingSpinner /> : "Send message"}
-        </Button>
-      </form>
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <FormInput
+            control={control}
+            name="fullName"
+            type="text"
+            placeHolder="Chuck Norris"
+            label="Full name"
+            trigger={trigger}
+            formSubmitted={isSubmitted}
+            error={errors.fullName}
+          />
+          <FormInput
+            control={control}
+            name="email"
+            type="text"
+            placeHolder="you@company.com"
+            label="Email"
+            trigger={trigger}
+            formSubmitted={isSubmitted}
+            error={errors.email}
+          />
+          <FormInput
+            type="textarea"
+            name="message"
+            placeHolder="Leave funny message or not..."
+            label="Message"
+            control={control}
+          />
+          <Button variant="primary" style={{ minWidth: "146px" }}>
+            {isSending ? <LoadingSpinner /> : "Send inquiry"}
+          </Button>
+        </form>
+      </div>
       <ToastContainer
         autoClose={false}
         hideProgressBar={true}

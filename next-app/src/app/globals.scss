@@ -100,7 +100,7 @@ a {
   background-color: $grey-dark;
 
   & > div {
-    max-width: 928px;
+    max-width: $max-content-width;
   }
 }
 

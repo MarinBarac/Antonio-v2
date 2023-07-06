@@ -1,9 +1,8 @@
-import ProjectsList from '@modules/projects/ProjectsList';
-import styles from './ProjectsSection.module.scss';
+import ProjectsList from '@modules/projects/ProjectsSection/ProjectsList';
 
 const ProjectsSection = () => {
     return <section className='section'>
-        <div className={styles.content}>
+        <div>
             <ProjectsList />
         </div>
     </section>

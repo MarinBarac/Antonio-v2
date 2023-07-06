@@ -18,6 +18,7 @@
   .description {
     margin-top: 16px;
     color: $grey;
+    white-space: pre-line;
   }
 
   .buttons {
@@ -34,7 +35,7 @@
     .description {
       margin-top: 32px;
 
-      &.large {
+      &.home {
         display: none;
       }
     }

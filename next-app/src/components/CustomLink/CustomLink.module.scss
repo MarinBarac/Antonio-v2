@@ -37,6 +37,8 @@
 
 .underline {
   color: $light;
+  transition: all 100ms linear;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

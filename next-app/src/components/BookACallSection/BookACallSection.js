@@ -19,13 +19,13 @@ const BookACallSection = ({ title, description, type }) => {
           {title}
         </h2>
         {description && (
-          <p
+          <div
             className={`${type === "largeText" ? "h3" : "p2"} ${
               styles.description
             } ${type === "largeText" && styles.large}`}
           >
             {description}
-          </p>
+          </div>
         )}
         <div className={styles.buttons}>
           <Link

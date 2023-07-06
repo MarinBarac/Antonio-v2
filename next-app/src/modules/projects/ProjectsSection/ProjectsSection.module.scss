@@ -3,8 +3,7 @@
 .list {
   list-style: none;
   width: 100%;
-  max-width: 928px;
-  margin: 0 auto;
+  max-width: $max-content-width;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr 1fr;

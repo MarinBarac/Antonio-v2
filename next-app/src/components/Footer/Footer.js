@@ -13,7 +13,7 @@ const Footer = () => {
         <ul className={styles.siteLinks}>
           {SITE_LINKS.map((link) => (
             <li key={"Footer link to " + link.text}>
-              <CustomLink href={link.href}>{link.text}</CustomLink>
+              <CustomLink href={link.href} type="underline">{link.text}</CustomLink>
             </li>
           ))}
         </ul>

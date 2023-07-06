@@ -2,19 +2,19 @@ import PageTitle from "@components/PageTitle";
 import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
 import MainSection from "./MainSection";
 import FactSection from "@components/FactSection";
+import { getPage } from "@services/pages";
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const pageInfo = await getPage("about");
+
   return (
     <>
-      <PageTitle
-        title="About Antonio"
-        description={`So you made it here. Congratulations. If you are not into reading about the short life story of some internet stranger named Antonio, skip to the Contact page. No hard feelings.`}
-      />
+      <PageTitle title={pageInfo.title} description={pageInfo.description} />
       <FactSection
-        subtitle="fun fact"
-        title={`I love to get wasted in Jameson-Coke and eat rump steak.`}
+        subtitle={pageInfo.midsectionSubtitle}
+        title={pageInfo.midsectionTitle}
       />
-      <MainSection />
+      <MainSection article={pageInfo.article} />
       <ReadyToTalkSection />
     </>
   );

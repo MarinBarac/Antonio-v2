@@ -5,8 +5,11 @@
   flex-direction: column;
   gap: 32px;
 
-  p {
+  .article {
     color: $light;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .imagesList {
