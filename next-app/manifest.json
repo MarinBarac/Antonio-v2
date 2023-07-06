@@ -51,19 +51,19 @@
       "url": "/about?source=pwa"
     },
     {
-      "name": "Anotio Contact",
+      "name": "Antonio Contact",
       "short_name": "Contact",
       "description": "Contact page",
       "url": "/contact?source=pwa"
     },
     {
-      "name": "Anotio Services",
+      "name": "Antonio Services",
       "short_name": "Services",
       "description": "Services page",
       "url": "/services?source=pwa"
     },
     {
-      "name": "Anotio Projects",
+      "name": "Antonio Projects",
       "short_name": "Projects",
       "description": "Projects page",
       "url": "/projects?source=pwa"

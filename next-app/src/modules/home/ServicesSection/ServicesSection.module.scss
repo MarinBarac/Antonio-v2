@@ -1,13 +1,12 @@
 @import "@styles/variables.scss";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-    @media screen and (min-width: $tablet) {
-        h2 {
-            font-size: 32px;
-        }
-    }
+  @media screen and (min-width: $tablet) {
+    gap: 90px;
+  }
 }

@@ -1,16 +1,19 @@
-import CoffeeChat from "@components/CoffeeChat";
 import PageTitle from "@components/PageTitle";
 import ServicesListSection from "./ServicesList";
+import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
+import { getPage } from "@services/pages";
 
-const ServicesPage = () => {
+const ServicesPage = async () => {
+  const pageInfo = await getPage("services");
+
   return (
     <>
       <PageTitle
-        title="Services"
-        description="You are not definitely visiting this site just to spend some time online. So here are the ways we can collaborate."
+        title={pageInfo.title}
+        description={`${pageInfo.description}`}
       />
       <ServicesListSection />
-      <CoffeeChat />
+      <ReadyToTalkSection />
     </>
   );
 };

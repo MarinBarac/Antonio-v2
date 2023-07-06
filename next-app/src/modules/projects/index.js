@@ -1,28 +1,19 @@
-import CoffeeChat from "@components/CoffeeChat";
 import PageTitle from "@components/PageTitle";
-import ProjectsText from "./ProjectsText/ProjectsText";
-import { AreaOfExpertise } from "@components/AreaOfExpertise";
-
-export const revalidate = 24 * 3600;
+import { getPage } from "@services/pages";
+import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
+import ProjectsSection from "./ProjectsSection";
 
 const ProjectsPage = async () => {
-  //const projects = await getProjectPreviews();
-  // const projectsList = projects.map((project) => ({
-  //   image: project.previewImage,
-  //   title: project.projectName,
-  //   description: project.description,
-  //   slug: project.slug,
-  // }));
+  const pageInfo = await getPage('projects');
 
   return (
     <>
       <PageTitle
-        title="Projects"
-        description="Well, if you came here looking to see some clients' work say a big thank you to NDAs. 😎"
+        title={pageInfo.title}
+        description={pageInfo.description}
       />
-      <ProjectsText />
-      <AreaOfExpertise title='Area of expertise in B2B SaaS' titleClass='small'/>
-      <CoffeeChat />
+      <ProjectsSection />
+      <ReadyToTalkSection />
     </>
   );
 };

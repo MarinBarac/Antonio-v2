@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 const ContactPage = () => {
     return <>
-        <PageTitle title="Contact" description="Old school? Alright than."/>
+        <PageTitle title="Contact" description="Let's Connect and Bring Your Vision to Life"/>
         <ContactForm />
     </>
 }
