@@ -3,11 +3,17 @@ import styles from "./BookACallSection.module.scss";
 import Link from "next/link";
 import CustomLink from "@components/CustomLink";
 
-const BookACallSection = ({ title, description, type }) => {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth();
-
+const BookACallSection = ({
+  title,
+  description,
+  type,
+  firstLink,
+  firstLinkText,
+  secondLink,
+  secondLinkText,
+  secondLinkBlank,
+}) => {
+  console.log(secondLinkBlank);
   return (
     <section className="section">
       <div className={styles.container}>
@@ -28,17 +34,20 @@ const BookACallSection = ({ title, description, type }) => {
           </div>
         )}
         <div className={styles.buttons}>
-          <Link
-            href={`https://calendly.com/antoniovidakovic/30min?month=${year}-${
-              +month < 10 ? "0" + month : month
-            }`}
-            target="_blank"
-          >
-            <Button>Book a call</Button>
-          </Link>
-          <CustomLink href="/contact" type="withArrow">
-            Send an inquiry
-          </CustomLink>
+          {firstLink && (
+            <Link href={firstLink} target="_blank">
+              <Button>{firstLinkText}</Button>
+            </Link>
+          )}
+          {secondLink && (
+            <CustomLink
+              href={secondLink}
+              type="withArrow"
+              target={secondLinkBlank ? "_blank" : "_self"}
+            >
+              {secondLinkText}
+            </CustomLink>
+          )}
         </div>
       </div>
     </section>

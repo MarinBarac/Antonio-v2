@@ -100,7 +100,7 @@ a {
   background-color: $grey-dark;
 
   & > div {
-    max-width: $max-content-width;
+    max-width: 100%;
   }
 }
 
@@ -120,5 +120,9 @@ a {
 
   .section {
     padding: 90px 20px;
+
+    & > div {
+      max-width: $max-content-width;
+    }
   }
 }

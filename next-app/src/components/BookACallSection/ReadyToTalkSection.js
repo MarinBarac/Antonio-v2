@@ -1,3 +1,4 @@
+import { generateBookACallLink } from "shared/services";
 import BookACallSection from "./BookACallSection";
 
 const ReadyToTalkSection = () => {
@@ -11,6 +12,10 @@ const ReadyToTalkSection = () => {
         </p>
       }
       type="largeText"
+      firstLink={generateBookACallLink()}
+      firstLinkText='Book a call'
+      secondLink='/contact'
+      secondLinkText='Send an inquiry'
     />
   );
 };

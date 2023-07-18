@@ -19,7 +19,6 @@ export const getPage = async (type) => {
     const response = await callContentful(query);
     return response.data.pageCollection.items[0];
   } catch (error) {
-    console.log(error);
     return null;
   }
 };
