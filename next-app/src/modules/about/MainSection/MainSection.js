@@ -4,7 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const AboutSection = ({ article }) => {
   return (
-    <section className="section">
+    <section className={`section ${styles.section}`}>
       <div className={styles.container}>
         <div className={`p3 ${styles.article}`}>{documentToReactComponents(article.json)}</div>
         <ul className={styles.imagesList}>
