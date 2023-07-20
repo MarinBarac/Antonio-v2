@@ -107,7 +107,7 @@ const ContactForm = () => {
             error={errors.message}
             setFocus={setFocus}
           />
-          <Button variant="primary" style={{ minWidth: "146px" }}>
+          <Button variant="primary" type="submit" style={{ minWidth: "146px" }}>
             {isSending ? <LoadingSpinner /> : "Send inquiry"}
           </Button>
         </form>
