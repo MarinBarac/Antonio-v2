@@ -41,7 +41,7 @@
       }
     }
 
-    .arrow {
+    .arrowContainer {
       margin-top: auto;
       display: flex;
       align-items: center;
@@ -50,6 +50,7 @@
       height: 32px;
       border-radius: 32px;
       background-color: $light;
+      color: $black;
     }
   }
 
@@ -58,7 +59,7 @@
     display: none;
   }
 
-  .arrow {
+  .arrowContainer {
     display: none;
     align-items: center;
     justify-content: center;
@@ -67,6 +68,11 @@
     border-radius: 32px;
     background-color: $light;
     color: $black;
+
+    .arrow {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
@@ -91,7 +97,7 @@
       }
     }
 
-    .arrow {
+    .arrowContainer {
       display: none;
     }
   }
@@ -106,10 +112,11 @@
     }
   }
 
-  .arrow {
+  .arrowContainer {
     display: flex;
     margin-left: auto;
     color: $black;
+    
   }
 }
 

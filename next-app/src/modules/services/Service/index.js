@@ -16,6 +16,7 @@ const Service = async ({ id }) => {
         title={serviceInfo.title}
         description={serviceInfo.description}
         href="/services"
+        backLinkText='Back to services'
       />
       <FactSection
         subtitle="Key guiding principle"

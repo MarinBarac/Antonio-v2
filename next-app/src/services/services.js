@@ -26,7 +26,6 @@ export const getServicesPreviews = async () => {
     const response = await callContentful(query);
     return response.data.serviceCollection.items;
   } catch (error) {
-    console.log(error);
     return null;
   }
 };

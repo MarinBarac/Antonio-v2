@@ -71,10 +71,9 @@ const ContactForm = () => {
       setIsSending(false);
     }
   };
-  console.log(getValues());
   return (
     <section className={clsx("section", styles.container)}>
-      <div>
+      <div className={styles.container}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <Input
             control={control}

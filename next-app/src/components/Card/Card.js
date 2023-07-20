@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Card.module.scss";
 import Image from "next/image";
-import { ChevronRightOutline } from "shared/assets/icons";
+import { ArrowRight } from "shared/assets/icons";
 
 const Card = ({ type, title, tags, image, href, className }) => {
   return (
@@ -30,15 +30,15 @@ const Card = ({ type, title, tags, image, href, className }) => {
             </ul>
           )}
         </div>
-        <Link href={href} className={styles.arrow}>
-          <ChevronRightOutline />
+        <Link href={href} className={styles.arrowContainer}>
+          <ArrowRight className={styles.arrow}/>
         </Link>
       </div>
       <div className={styles.imageContainer}>
         <Image alt="Card image" src={image.src || image.url} width={image.width} height={image.height} className={styles.image}/>
       </div>
-      <Link href={href} className={styles.arrow}>
-        <ChevronRightOutline />
+      <Link href={href} className={styles.arrowContainer}>
+        <ArrowRight className={styles.arrow}/>
       </Link>
     </div>
   );

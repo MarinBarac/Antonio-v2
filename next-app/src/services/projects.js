@@ -35,6 +35,11 @@ export const getProject = async (id) => {
             duration,
             midsectionTitle,
             aboutClient,
+            logo {
+              url,
+              width,
+              height,
+            },
             solutionImagesCollection {
               items {
                 url,
@@ -43,6 +48,7 @@ export const getProject = async (id) => {
               }
             },
             clientSite,
+            dribbleLink
         }
     }
   }`;
@@ -51,7 +57,6 @@ export const getProject = async (id) => {
     const response = await callContentful(query);
     return response.data.projectCollection?.items[0];
   } catch (error) {
-    console.log(error);
     return null;
   }
 };

@@ -13,7 +13,6 @@ const BookACallSection = ({
   secondLinkText,
   secondLinkBlank,
 }) => {
-  console.log(secondLinkBlank);
   return (
     <section className="section">
       <div className={styles.container}>

@@ -99,7 +99,8 @@ a {
   justify-content: center;
   background-color: $grey-dark;
 
-  & > div {
+  & > div:first-child {
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -121,7 +122,7 @@ a {
   .section {
     padding: 90px 20px;
 
-    & > div {
+    & > div:first-child {
       max-width: $max-content-width;
     }
   }

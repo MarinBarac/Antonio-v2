@@ -32,7 +32,6 @@ const Input = ({
       trigger(name);
     }
   };
-  console.log(value);
   return (
     <div className={containerClass}>
       <div

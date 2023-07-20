@@ -1,11 +1,5 @@
-export { default as ContactIcon } from "./Contact";
-export { default as DribbleIcon } from "./Dribble";
-export { default as HomeIcon } from "./Home";
-export { default as LightBulb } from "./LightBulb";
+export { default as ClockIcon } from "./Clock";
 export { default as LinkedInIcon } from "./LinkedIn";
-export { default as LeftArrow } from './LeftArrow';
 export { default as Logo } from "./Logo";
-export { default as MediumIcon} from './Medium';
-export { default as Moon } from "./Moon";
-export { default as ServicesIcon } from './Services';
+export { default as SettingsIcon } from './Settings';
 export { default as UserIcon } from './User';

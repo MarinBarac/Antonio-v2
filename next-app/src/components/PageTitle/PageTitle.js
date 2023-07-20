@@ -3,7 +3,7 @@ import styles from "./PageTitle.module.scss";
 import PageTitleImage from "./PageTitleImage";
 import { ChevronRightOutline } from "shared/assets/icons";
 
-const PageTitle = ({ title, description, href, withImage }) => {
+const PageTitle = ({ title, description, href, withImage, backLinkText, children }) => {
   return (
     <section className={`${styles.container} ${withImage && styles.withImage}`}>
       <div className={styles.content}>
@@ -12,12 +12,13 @@ const PageTitle = ({ title, description, href, withImage }) => {
             <div className={styles.linkArrow}>
               <ChevronRightOutline />
             </div>
-            <p className="p2">Back to services</p>
+            <p className="p2">{backLinkText}</p>
           </Link>
         )}
         <h1 className="h1">{title}</h1>
         <p className={`h3 ${styles.description}`}>{description}</p>
         {withImage && <PageTitleImage />}
+        {children}
       </div>
     </section>
   );
