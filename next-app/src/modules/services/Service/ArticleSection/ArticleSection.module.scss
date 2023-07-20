@@ -113,6 +113,11 @@
           color: $black;
           transition: opacity 100ms linear;
 
+          .arrow {
+            width: 24px;
+            height: 24px;
+          }
+
           &:first-child {
             transform: rotate(180deg);
           }

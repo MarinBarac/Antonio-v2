@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./PageTitle.module.scss";
 import PageTitleImage from "./PageTitleImage";
-import { ChevronRightOutline } from "shared/assets/icons";
+import { ArrowRight } from "shared/assets/icons";
 
 const PageTitle = ({ title, description, href, withImage, backLinkText, children }) => {
   return (
@@ -10,7 +10,7 @@ const PageTitle = ({ title, description, href, withImage, backLinkText, children
         {href && (
           <Link href={href} className={styles.link}>
             <div className={styles.linkArrow}>
-              <ChevronRightOutline />
+              <ArrowRight />
             </div>
             <p className="p2">{backLinkText}</p>
           </Link>

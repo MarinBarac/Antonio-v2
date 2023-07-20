@@ -1,7 +1,5 @@
 import Image from "next/image";
 import styles from "./ClientSection.module.scss";
-import Link from "next/link";
-import { ChevronRightOutline } from "shared/assets/icons";
 import CustomLink from "@components/CustomLink";
 
 const ClientSection = ({ aboutClient, logo, clientSite }) => {

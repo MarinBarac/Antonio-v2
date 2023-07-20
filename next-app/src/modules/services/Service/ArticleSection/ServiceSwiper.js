@@ -1,11 +1,11 @@
 "use client";
 
 import { SwiperSlide, Swiper } from "swiper/react";
-import { ChevronRightOutline } from "shared/assets/icons";
 
 import styles from "./ArticleSection.module.scss";
 import "swiper/css";
 import { useCallback, useRef, useState } from "react";
+import { ArrowRight } from "shared/assets/icons";
 
 const ServiceSwiper = ({ slides }) => {
   const sliderRef = useRef(null);
@@ -49,14 +49,14 @@ const ServiceSwiper = ({ slides }) => {
           className={styles.swiperArrow}
           onClick={handlePrev}
         >
-          <ChevronRightOutline />
+          <ArrowRight className={styles.arrow}/>
         </button>
         <button
           disabled={isEnd}
           className={styles.swiperArrow}
           onClick={handleNext}
         >
-          <ChevronRightOutline />
+          <ArrowRight className={styles.arrow}/>
         </button>
       </div>
     </div>
