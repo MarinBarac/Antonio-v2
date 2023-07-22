@@ -1,5 +1,4 @@
 import HomePage from "@modules/home";
-import { openGraph } from "shared/sharedMetadata";
 
 export const generateMetadata = () => {
   require("dotenv").config();

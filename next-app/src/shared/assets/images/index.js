@@ -5,3 +5,5 @@ export { default as AboutOne } from "@assets/images/about-1.png";
 export { default as AboutTwo } from "@assets/images/about-2.png";
 export { default as AboutThree } from "@assets/images/about-3.png";
 export { default as AboutFour } from "@assets/images/about-4.png";
+
+export { default as OgImage } from '@assets/images/opengraph-image.png';
