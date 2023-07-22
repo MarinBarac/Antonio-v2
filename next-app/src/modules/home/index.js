@@ -4,6 +4,7 @@ import BookACallSection from "@components/BookACallSection";
 import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
 import { getPage } from "@services/pages";
 import ProjectsSection from "@modules/projects/ProjectsSection";
+import { generateBookACallLink } from "shared/services";
 
 const HomePage = async () => {
   const pageInfo = await getPage("home");
@@ -18,6 +19,11 @@ const HomePage = async () => {
       <BookACallSection
         title={`${pageInfo.midsectionTitle}`}
         description={`${pageInfo.midsectionSubtitle}`}
+        firstLink={generateBookACallLink()}
+        firstLinkText='Book a call'
+        secondLink='/contact'
+        secondLinkText='Send an inquiry'
+        secondLinkType='green-underline'
       />
       <ProjectsSection />
       <ServicesSection />

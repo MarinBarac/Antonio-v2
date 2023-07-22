@@ -11,4 +11,8 @@ export const HEADER_LINKS = [
         href: '/about',
         text: 'About me'
     },
+    {
+        href: '/contact',
+        text: 'Contact'
+    },
 ]

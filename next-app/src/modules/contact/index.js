@@ -21,6 +21,7 @@ const ContactPage = async () => {
         secondLink={generateBookACallLink()}
         secondLinkText="Book videocall"
         secondLinkBlank={true}
+        secondLinkType='green-underline'
       />
     </>
   );

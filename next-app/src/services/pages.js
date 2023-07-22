@@ -12,6 +12,13 @@ export const getPage = async (type) => {
             article {
               json
             },
+            imagesCollection {
+              items {
+                url,
+                width,
+                height,
+              }
+            }
         }
       }}`;
 

@@ -21,11 +21,22 @@
   }
 }
 
+.footer-link {
+  color: $light;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .withArrow {
   width: 100%;
-  padding: 0px 32px;
+  padding: 16px 32px;
   font-size: 16px;
   line-height: 120%;
+}
+
+.green-underline {
   color: $primary;
 
   &:hover {
@@ -35,7 +46,7 @@
   }
 }
 
-.underline {
+.white-underline {
   color: $light;
   transition: all 100ms linear;
   text-decoration: none;

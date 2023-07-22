@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import styles from "./Button.module.scss";
 
 const Button = forwardRef(

@@ -19,7 +19,13 @@ const SolutioSection = ({ images, dribbbleLink }) => {
             />
           ))}
         </div>
-        <CustomLink href={dribbbleLink} type="withArrow" target="_blank" className={styles.link}>
+        <CustomLink
+          href={dribbbleLink}
+          type="green-underline"
+          target="_blank"
+          className={styles.link}
+          withArrow
+        >
           Visit live solution
         </CustomLink>
       </div>

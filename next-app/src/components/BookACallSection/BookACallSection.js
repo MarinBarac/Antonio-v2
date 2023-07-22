@@ -12,6 +12,7 @@ const BookACallSection = ({
   secondLink,
   secondLinkText,
   secondLinkBlank,
+  secondLinkType,
 }) => {
   return (
     <section className="section">
@@ -41,8 +42,9 @@ const BookACallSection = ({
           {secondLink && (
             <CustomLink
               href={secondLink}
-              type="withArrow"
+              type={secondLinkType || "white-underline"}
               target={secondLinkBlank ? "_blank" : "_self"}
+              withArrow
             >
               {secondLinkText}
             </CustomLink>

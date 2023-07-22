@@ -1,7 +1,7 @@
 import { generateBookACallLink } from "shared/services";
 import BookACallSection from "./BookACallSection";
 
-const ReadyToTalkSection = () => {
+const ReadyToTalkSection = ({ secondLinkType }) => {
   return (
     <BookACallSection
       title={`Ready to talk about your project?`}
@@ -16,6 +16,7 @@ const ReadyToTalkSection = () => {
       firstLinkText='Book a call'
       secondLink='/contact'
       secondLinkText='Send an inquiry'
+      secondLinkType={secondLinkType}
     />
   );
 };

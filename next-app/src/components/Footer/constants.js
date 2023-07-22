@@ -21,10 +21,6 @@ export const SITE_LINKS = [
     href: "/contact",
     text: "Contact",
   },
-  {
-    href: "/",
-    text: "Privacy",
-  },
 ];
 
 export const SOCIAL_MEDIA_LINKS = [

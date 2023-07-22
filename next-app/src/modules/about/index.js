@@ -14,7 +14,7 @@ const AboutPage = async () => {
         subtitle={pageInfo.midsectionSubtitle}
         title={pageInfo.midsectionTitle}
       />
-      <MainSection article={pageInfo.article} />
+      <MainSection article={pageInfo.article} images={pageInfo.imagesCollection.items}/>
       <ReadyToTalkSection />
     </>
   );

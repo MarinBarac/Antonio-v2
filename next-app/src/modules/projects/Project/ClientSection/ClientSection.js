@@ -19,7 +19,14 @@ const ClientSection = ({ aboutClient, logo, clientSite }) => {
                 className={styles.logo}
               />
             </div>
-            <CustomLink type="withArrow" href={clientSite} target="_blank">Visit website</CustomLink>
+            <CustomLink
+              type="white-underline"
+              href={clientSite}
+              target="_blank"
+              withArrow
+            >
+              Visit website
+            </CustomLink>
           </div>
         </div>
       </div>
