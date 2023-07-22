@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./ClientSection.module.scss";
 import CustomLink from "@components/CustomLink";
 
-const ClientSection = ({ aboutClient, logo, clientSite }) => {
+const ClientSection = ({ aboutClient, logo, link, linkText }) => {
   return (
     <section className="section">
       <div className={styles.container}>
@@ -19,14 +19,19 @@ const ClientSection = ({ aboutClient, logo, clientSite }) => {
                 className={styles.logo}
               />
             </div>
-            <CustomLink
-              type="white-underline"
-              href={clientSite}
-              target="_blank"
-              withArrow
-            >
-              Visit website
-            </CustomLink>
+            {linkText &&
+              (link ? (
+                <CustomLink
+                  type="white-underline"
+                  href={link}
+                  target="_blank"
+                  withArrow
+                >
+                  {linkText}
+                </CustomLink>
+              ) : (
+                <p className={`p2 ${styles.linkText}`}>{linkText}</p>
+              ))}
           </div>
         </div>
       </div>

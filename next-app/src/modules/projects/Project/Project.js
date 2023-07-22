@@ -20,9 +20,14 @@ const Project = async ({ id }) => {
       <ClientSection
         aboutClient={projectInfo.aboutClient}
         logo={projectInfo.logo}
-        clientSite={projectInfo.clientSite}
+        link={projectInfo.firstLink}
+        linkText={projectInfo.firstLinkText}
       />
-      <SolutioSection images={projectInfo.solutionImagesCollection.items} dribbbleLink={projectInfo.dribbleLink}/>
+      <SolutioSection
+        images={projectInfo.solutionImagesCollection.items}
+        link={projectInfo.secondLink}
+        linkText={projectInfo.secondLinkText}
+      />
       <ReadyToTalkSection />
     </>
   );

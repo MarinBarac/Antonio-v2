@@ -47,8 +47,10 @@ export const getProject = async (id) => {
                 height
               }
             },
-            clientSite,
-            dribbleLink
+            firstLink,
+            firstLinkText,
+            secondLink,
+            secondLinkText,
         }
     }
   }`;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./SolutioSection.module.scss";
 import CustomLink from "@components/CustomLink";
 
-const SolutioSection = ({ images, dribbbleLink }) => {
+const SolutioSection = ({ images, link, linkText }) => {
   return (
     <section className="section">
       <div className={styles.container}>
@@ -19,15 +19,17 @@ const SolutioSection = ({ images, dribbbleLink }) => {
             />
           ))}
         </div>
-        <CustomLink
-          href={dribbbleLink}
-          type="green-underline"
-          target="_blank"
-          className={styles.link}
-          withArrow
-        >
-          Visit live solution
-        </CustomLink>
+        {link && (
+          <CustomLink
+            href={link}
+            type="green-underline"
+            target="_blank"
+            className={styles.link}
+            withArrow
+          >
+            {linkText}
+          </CustomLink>
+        )}
       </div>
     </section>
   );
