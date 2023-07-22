@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import ArticleSection from "./ArticleSection";
 
 const {
@@ -10,13 +11,15 @@ const { getService } = require("@services/services");
 const Service = async ({ id }) => {
   const serviceInfo = await getService(id);
 
+  if (!serviceInfo) notFound();
+
   return (
     <>
       <PageTitle
         title={serviceInfo.title}
         description={serviceInfo.description}
         href="/services"
-        backLinkText='Back to services'
+        backLinkText="Back to services"
       />
       <FactSection
         subtitle="Key guiding principle"
@@ -25,6 +28,7 @@ const Service = async ({ id }) => {
       <ArticleSection
         slides={serviceInfo.slides}
         article={serviceInfo.article.json}
+        videoLink={serviceInfo.videoLink}
       />
       <ReadyToTalkSection />
     </>

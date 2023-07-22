@@ -18,6 +18,18 @@ const ArticleSection = ({ article, slides, videoLink }) => {
             </li>
           ))}
         </ul>
+        {videoLink && (
+          <div className={styles.videoContainer}>
+            <iframe
+              width="560"
+              height="315"
+              src={videoLink}
+              frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        )}
       </div>
     </section>
   );

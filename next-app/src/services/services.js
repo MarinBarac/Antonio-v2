@@ -48,6 +48,7 @@ export const getService = async (id) => {
                     json
                 },
                 slides,
+                videoLink,
             }
         }
     }`;

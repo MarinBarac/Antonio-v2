@@ -1,4 +1,4 @@
-const { default: NotFound } = require("@modules/NotFound")
+import NotFound from "@modules/NotFound";
 
 const NotFoundPage = () => {
     return <NotFound />
