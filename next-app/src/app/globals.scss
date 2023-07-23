@@ -21,57 +21,70 @@ body {
   scroll-behavior: smooth;
 }
 
+html {
+  overflow: hidden;
+  height: 100vh;
+}
+
 body {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  white-space: pre-line;
   transition: all 0.2s linear;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: auto;
 }
 
 main {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-h1,
-h2,
-h3 {
-  color: $black;
+.h1,
+.h2,
+.h3 {
+  color: $light;
   font-weight: 600;
 }
 
-h1 {
-  font-size: 40px;
-  line-height: 120%;
-}
-
-h2 {
-  font-size: 24px;
+.h1 {
+  font-size: 48px;
   line-height: 100%;
 }
 
-h3 {
-  font-size: 16px;
-  line-height: 150%;
+.h2 {
+  font-size: 24px;
+  line-height: 120%;
 }
 
-p {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: $grey;
+.h3 {
+  font-size: 18px;
+  line-height: 130%;
 }
 
 a {
   text-decoration: none;
 }
 
-.text {
-  color: $grey;
+.p1 {
+  font-size: 12px;
+}
+
+.p2 {
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.p3 {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
 }
 
 .content {
@@ -82,60 +95,36 @@ a {
 
 .section {
   width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 24px;
-  overflow-x: visible;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: $grey-dark;
 
-  &:first-child {
-    padding: 48px 24px;
-  }
-
-  &:last-child {
-    padding-bottom: 48px;
+  & > div:first-child {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
-.black-white {
-  color: $black;
-}
-
-.dark {
-  h1,
-  h2,
-  h3 {
-    color: $white;
+@media screen and (min-width: $tablet) {
+  .h1 {
+    font-size: 72px;
   }
 
-  p,
-  .text {
-    color: $grey-light;
+  .h2 {
+    font-size: 48px;
   }
 
-  .black-white {
-    color: $white;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  body {
-    flex-direction: row;
-  }
-
-  main {
-    gap: 40px;
-    padding: 120px 24px;
+  .h3 {
+    font-size: 24px;
+    line-height: 120%;
   }
 
   .section {
-    padding: 0px;
+    padding: 90px 20px;
 
-    &:first-child {
-      padding: 0px;
-    }
-
-    &:last-child {
-      padding-bottom: 0px;
+    & > div:first-child {
+      max-width: $max-content-width;
     }
   }
 }

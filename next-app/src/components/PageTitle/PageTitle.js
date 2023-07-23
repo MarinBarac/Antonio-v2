@@ -1,29 +1,25 @@
-"use client";
-
-import ThemeContext from "@context/context";
-import clsx from "clsx";
-import { useContext } from "react";
-
+import Link from "next/link";
 import styles from "./PageTitle.module.scss";
-import { LeftArrow } from "@components/icons";
-import { useRouter } from "next/navigation";
+import PageTitleImage from "./PageTitleImage";
+import { ArrowRight } from "shared/assets/icons";
 
-const PageTitle = ({ title, description, prevLink }) => {
-  const router = useRouter();
-  const { isDark } = useContext(ThemeContext);
-
+const PageTitle = ({ title, description, href, withImage, backLinkText, children }) => {
   return (
-    <section
-      className={clsx("section", styles.container, { [styles.dark]: isDark })}
-    >
-      {prevLink && (
-        <p onClick={() => router.back()} className={styles.prevLink}>
-          <LeftArrow color={isDark ? "#B8C3C0" : "#656867"}/>
-          Take me back
-        </p>
-      )}
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <section className={`${styles.container} ${withImage && styles.withImage}`}>
+      <div className={styles.content}>
+        {href && (
+          <Link href={href} className={styles.link}>
+            <div className={styles.linkArrow}>
+              <ArrowRight />
+            </div>
+            <p className="p2">{backLinkText}</p>
+          </Link>
+        )}
+        <h1 className="h1">{title}</h1>
+        <p className={`h3 ${styles.description}`}>{description}</p>
+        {withImage && <PageTitleImage />}
+        {children}
+      </div>
     </section>
   );
 };

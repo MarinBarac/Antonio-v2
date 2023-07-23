@@ -1,24 +1,21 @@
 import PageTitle from "@components/PageTitle";
-import AboutSection from "./AboutSection";
-import CoffeeChat from "@components/CoffeeChat";
+import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
+import MainSection from "./MainSection";
+import FactSection from "@components/FactSection";
+import { getPage } from "@services/pages";
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const pageInfo = await getPage("about");
+
   return (
     <>
-      <PageTitle
-        title="About Antonio"
-        description={
-          <>
-            So you made it here. Congratulations.
-            <br />
-            If you are not into reading about the short life story of some
-            internet stranger named Antonio, skip to the Contact page. No hard
-            feelings.
-          </>
-        }
+      <PageTitle title={pageInfo.title} description={pageInfo.description} />
+      <FactSection
+        subtitle={pageInfo.midsectionSubtitle}
+        title={pageInfo.midsectionTitle}
       />
-      <AboutSection />
-      <CoffeeChat />
+      <MainSection article={pageInfo.article} images={pageInfo.imagesCollection.items}/>
+      <ReadyToTalkSection />
     </>
   );
 };

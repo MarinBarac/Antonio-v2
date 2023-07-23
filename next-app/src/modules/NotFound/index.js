@@ -4,12 +4,14 @@ import Button from "@components/Button";
 
 const NotFound = () => {
   return (
-    <div className={styles.container}>
-      <h1 className="black-white">How did you manage to get here?</h1>
-      <Link href="https://google.com">
-        <Button variant="primary">Leave the site</Button>
-      </Link>
-    </div>
+    <section className={`section ${styles.section}`}>
+      <div className={styles.container}>
+        <h1 className="h1">How did you manage to get here?</h1>
+        <Link href="/" className={styles.link}>
+          <Button>Back home</Button>
+        </Link>
+      </div>
+    </section>
   );
 };
 

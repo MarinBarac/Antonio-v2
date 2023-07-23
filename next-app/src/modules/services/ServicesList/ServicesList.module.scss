@@ -1,9 +1,30 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+@import "@styles/variables.scss";
 
-    p {
-        font-weight: 400;
+.list {
+    list-style: none;
+    width: 100%;
+    max-width: $max-content-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    .cardContainer {
+        position: relative;
+        padding-bottom: 66%;
+
+        .card {
+            position: absolute;
+            inset: 0;
+        }
+    }
+
+    @media screen and (min-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+
+        .cardContainer {
+            padding-bottom: 50%;
+        }
     }
 }

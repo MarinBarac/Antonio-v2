@@ -1,21 +1,15 @@
+@import "@styles/variables.scss";
+
 .container {
-    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 392px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin-bottom: -24px;
-
-    .description {
-        font-weight: 400;
-    }
-
-    .form {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-
-        button {
-            margin-top: 14px;
-        }
-    }
+    align-items: center;
+    gap: 16px;
 }

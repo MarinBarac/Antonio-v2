@@ -1,19 +1,23 @@
-import "./globals.scss";
-import { Inter } from "next/font/google";
-import { ThemeContextProvider } from "@context/context";
-import Navbar from "@components/Navbar/Navbar";
+import Script from "next/script";
 import Footer from "@components/Footer";
 import GoogleImage from "@assets/images/google.png";
+import Header from "@components/Header";
 import Favicon from "app/favicon.ico";
-import Script from "next/script";
 
-const inter = Inter({ subsets: ["cyrillic"], weights: ["400", "500", "600"] });
+import "./globals.scss";
 
 export const generateMetadata = () => {
   require("dotenv").config();
   return {
+    metadataBase: new URL(process.env.SITE_URL),
     charSet: "utf-8",
     viewport: "width=device-width, initial-scale=1",
+    alternates: {
+      canonical: "/",
+      languages: {
+        "en-US": "/en-US",
+      },
+    },
     keywords: [
       "UX/UI",
       "Antonio Vidakovic Design",
@@ -87,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KCMT73Z"
@@ -96,13 +100,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <ThemeContextProvider>
-          <Navbar />
-          <div className="content">
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </ThemeContextProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -3,39 +3,33 @@
 .button {
   display: flex;
   justify-content: center;
-  width: fit-content;
+  width: 100%;
   text-align: center;
-  padding: 14px 16px;
-  border-radius: 6px;
-  color: $grey-dark;
+  padding: 16px 32px;
+  color: $black;
+  background-color: $primary;
+  border-radius: 12px;
   outline: 0;
   border: none;
   cursor: pointer;
+  font-family: inherit;
   font-weight: 600;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 120%;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: $primary-dark;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
 }
 
-.default {
-  background-color: $white;
-  border: 1px solid $grey-light;
-}
-
-.primary {
-  background-color: $primary;
-}
-
-.secondary {
-  background-color: $grey-ultra-light;
-}
-
-.default.dark {
-  background-color: $black;
-  color: $white;
-  border: 1px solid $grey-dark;
-}
-
-.secondary.dark {
-  background-color: transparent;
-  color: $white;
+@media screen and (min-width: $tablet) {
+  .button {
+    width: fit-content;
+    border-radius: 32px;
+  }
 }

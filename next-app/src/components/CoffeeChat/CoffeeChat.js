@@ -2,15 +2,12 @@
 
 import Button from "@components/Button";
 import SectionTitle from "@components/SectionTitle/SectionTitle";
-import ThemeContext from "@context/context";
 import clsx from "clsx";
-import { useContext } from "react";
 
 import styles from "./CoffeeChat.module.scss";
 import Link from "next/link";
 
 const CoffeeChat = () => {
-  const { isDark } = useContext(ThemeContext);
 
   const date = new Date();
   const year = date.getFullYear();
@@ -18,7 +15,7 @@ const CoffeeChat = () => {
 
   return (
     <section className="section">
-      <div className={clsx(styles.container, { [styles.dark]: isDark })}>
+      <div className={clsx(styles.container)}>
         <SectionTitle
           title="Coffee chat?"
           description="No strings attached. Book a 30 minute video call via Calendly or send an email."

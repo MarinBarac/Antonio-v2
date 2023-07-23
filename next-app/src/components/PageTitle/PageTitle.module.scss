@@ -1,40 +1,78 @@
 @import "@styles/variables.scss";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  padding: 40px 20px;
+  background-color: $black;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-  .prevLink {
+  .content {
+    max-width: $max-content-width;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    gap: 32px;
     align-items: center;
-    gap: 8px;
-    font-size: 16px;
-    line-height: 16px;
-    color: $grey;
-    cursor: pointer;
+    text-align: center;
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding-inline: 32px;
+      color: $light;
+
+      .linkArrow {
+        display: flex;
+        align-items: center;
+        transform: rotate(180deg);
+      }
+    }
+
+    .description {
+      color: $grey;
+      white-space: pre-line;
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+    }
   }
 
-  h1 {
-    color: $black;
-  }
+  &.withImage {
+    padding: 40px 20px 0px;
 
-  p {
-    font-size: 18px;
-    color: $black;
+    .content {
+      .description {
+        max-width: 523px;
+        text-align: center;
+      }
+    }
   }
 }
 
-.container.dark {
-  .prevLink {
-    color: $grey-light;
-  }
-  
-  h1 {
-    color: $white;
-  }
+@media screen and (min-width: $tablet) {
+  .container {
+    padding: 140px 20px 90px;
 
-  p {
-    color: $white;
+    &.withImage {
+      padding: 140px 20px 0px;
+    }
+
+    .content {
+      h1 {
+        display: block;
+      }
+
+      .description {
+        display: block;
+        max-width: $max-content-width;
+      }
+
+      .image {
+        width: auto;
+        height: auto;
+      }
+    }
   }
 }

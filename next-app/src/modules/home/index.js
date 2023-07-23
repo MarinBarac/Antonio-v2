@@ -1,18 +1,33 @@
-import CoffeeChat from "@components/CoffeeChat";
-import SEO from "./SEO";
-import HeroSection from "./HeroSection";
-import TechnologySection from "./TechnologySection";
 import { ServicesSection } from "./ServicesSection";
+import PageTitle from "@components/PageTitle";
+import BookACallSection from "@components/BookACallSection";
+import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection";
+import { getPage } from "@services/pages";
+import ProjectsSection from "@modules/projects/ProjectsSection";
+import { generateBookACallLink } from "shared/services";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const pageInfo = await getPage("home");
 
   return (
     <>
-      <HeroSection />
+      <PageTitle
+        title={<p style={{ maxWidth: "676px" }}>{pageInfo.title}</p>}
+        description={`${pageInfo.description}`}
+        withImage={true}
+      />
+      <BookACallSection
+        title={`${pageInfo.midsectionTitle}`}
+        description={`${pageInfo.midsectionSubtitle}`}
+        firstLink={generateBookACallLink()}
+        firstLinkText='Book a call'
+        secondLink='/contact'
+        secondLinkText='Send an inquiry'
+        secondLinkType='green-underline'
+      />
+      <ProjectsSection />
       <ServicesSection />
-      <TechnologySection />
-      <CoffeeChat />
-      <SEO />
+      <ReadyToTalkSection />
     </>
   );
 };

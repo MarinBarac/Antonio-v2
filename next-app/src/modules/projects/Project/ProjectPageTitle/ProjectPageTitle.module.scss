@@ -1,0 +1,28 @@
+@import "@styles/variables.scss";
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  .projectInfoItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+      color: $grey;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+    .projectInfo {
+        flex-direction: row;
+        gap: 32px;
+    }
+}
