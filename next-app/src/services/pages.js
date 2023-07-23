@@ -2,7 +2,7 @@ import { callContentful } from "./contentful";
 
 export const getPages = async () => {
   const query = `{
-    pageCollection(where: { type: "${type}"}) {
+    pageCollection {
     items {
         href,
     }
