@@ -21,7 +21,7 @@ const Footer = () => {
         <ul className={styles.socialMedia}>
           {SOCIAL_MEDIA_LINKS.map((link) => (
             <li key={link.key}>
-              <Link href={link.href}>{link.icon}</Link>
+              <Link href={link.href} target="_blank">{link.icon}</Link>
             </li>
           ))}
         </ul>

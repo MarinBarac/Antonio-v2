@@ -26,17 +26,17 @@ export const SITE_LINKS = [
 export const SOCIAL_MEDIA_LINKS = [
   {
     key: "LinkedIn icon",
-    href: "/",
+    href: "https://www.linkedin.com/in/antonio-vidakovic/",
     icon: <LinkedInIcon />,
   },
   {
     key: "Dribbble icon",
-    href: "/",
+    href: "https://dribbble.com/vida994",
     icon: <DribbbleIcon />,
   },
   {
     key: "Medium icon",
-    href: "/",
+    href: "https://medium.com/@avidakovic14",
     icon: <MediumIcon />,
   },
 ];
