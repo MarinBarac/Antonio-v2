@@ -1,5 +1,6 @@
 import Service from "@modules/services/Service";
 import { getService } from "@services/services";
+import { openGraph } from "shared/sharedMetadata";
 
 export const generateMetadata = async ({ params: { id } }) => {
   const pageInfo = await getService(id);

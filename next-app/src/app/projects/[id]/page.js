@@ -1,5 +1,6 @@
 import Project from "@modules/projects/Project";
 import { getProject } from "@services/projects";
+import { openGraph } from "shared/sharedMetadata";
 
 export const generateMetadata = async ({ params: { id } }) => {
   const pageInfo = await getProject(id);
