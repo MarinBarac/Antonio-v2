@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import ArticleSection from "./ArticleSection";
+import { SLIDES } from "./ArticleSection/constants";
 
 const {
   default: ReadyToTalkSection,
@@ -26,7 +27,7 @@ const Service = async ({ id }) => {
         title={serviceInfo.midsectionTitle}
       />
       <ArticleSection
-        slides={serviceInfo.slides}
+        slides={SLIDES[id]}
         article={serviceInfo.article.json}
         videoLink={serviceInfo.videoLink}
       />

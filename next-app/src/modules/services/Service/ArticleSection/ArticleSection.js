@@ -10,9 +10,9 @@ const ArticleSection = ({ article, slides, videoLink }) => {
         <div className={styles.article}>
           {documentToReactComponents(article)}
         </div>
-        <ServiceSwiper slides={slides.list} />
+        <ServiceSwiper slides={slides} />
         <ul className={styles.slidesList}>
-          {slides.list.map((slide) => (
+          {slides.map((slide) => (
             <li key={slide.title} className={`p3 ${styles.slide}`}>
               <span>{slide.title}</span> {slide.description}
             </li>

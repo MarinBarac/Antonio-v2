@@ -1,7 +1,22 @@
 import { callContentful } from "./contentful";
 
+export const getPages = async () => {
+  const query = `{
+    pageCollection(where: { type: "${type}"}) {
+    items {
+        href,
+    }
+  }}`;
+
+  try {
+    const response = await callContentful(query);
+    return response.data.pageCollection.items;
+  } catch (error) {
+    return null;
+  }
+};
+
 export const getPage = async (type) => {
-  require("dotenv").config();
   const query = `{
         pageCollection(where: { type: "${type}"}) {
         items {
