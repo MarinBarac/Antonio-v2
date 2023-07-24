@@ -4,8 +4,8 @@ export const getServicesPreviews = async () => {
   const query = `{
         serviceCollection(order:id_ASC) {
             items {
-                id,
                 title,
+                slug,
                 description,
                 previewImage {
                     url,
@@ -30,12 +30,13 @@ export const getServicesPreviews = async () => {
   }
 };
 
-export const getService = async (id) => {
+export const getService = async (slug) => {
   const query = `{
-        serviceCollection(where: { id: ${id} }) {
+        serviceCollection(where: { slug: "${slug}" }) {
             items {
                 id,
                 title,
+                slug,
                 description,
                 previewImage {
                     url,

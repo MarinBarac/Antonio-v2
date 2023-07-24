@@ -14,7 +14,7 @@ const ProjectsList = async () => {
             title={project.title}
             tags={project.previewTags}
             image={project.previewImage}
-            href={`/projects/${project.id}`}
+            href={`/projects/${project.slug}`}
             type={index === 0 && "main"}
           />
         </li>

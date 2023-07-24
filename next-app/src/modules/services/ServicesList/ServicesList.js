@@ -10,7 +10,7 @@ const ServicesList = async () => {
       {services.map((service) => (
         <li key={service.title} className={styles.cardContainer}>
           <Card
-            href={"/services/" + service.id}
+            href={"/services/" + service.slug}
             image={service.previewImage}
             title={service.title}
             className={styles.card}

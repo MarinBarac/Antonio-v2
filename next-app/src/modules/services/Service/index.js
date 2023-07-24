@@ -9,8 +9,8 @@ const { default: FactSection } = require("@components/FactSection");
 const { default: PageTitle } = require("@components/PageTitle");
 const { getService } = require("@services/services");
 
-const Service = async ({ id }) => {
-  const serviceInfo = await getService(id);
+const Service = async ({ slug }) => {
+  const serviceInfo = await getService(slug);
 
   if (!serviceInfo) notFound();
 
@@ -27,7 +27,7 @@ const Service = async ({ id }) => {
         title={serviceInfo.midsectionTitle}
       />
       <ArticleSection
-        slides={SLIDES[id]}
+        slides={SLIDES[serviceInfo.id]}
         article={serviceInfo.article.json}
         videoLink={serviceInfo.videoLink}
       />

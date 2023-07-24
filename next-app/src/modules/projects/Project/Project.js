@@ -5,8 +5,8 @@ import ProjectPageTitle from "./ProjectPageTitle";
 import ClientSection from "./ClientSection";
 import SolutioSection from "./SolutionSection";
 
-const Project = async ({ id }) => {
-  const projectInfo = await getProject(id);
+const Project = async ({ slug }) => {
+  const projectInfo = await getProject(slug);
   return (
     <>
       <ProjectPageTitle

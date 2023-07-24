@@ -4,8 +4,8 @@ export const getProjectPreviews = async () => {
   const query = `{
         projectCollection(order: id_ASC) {
             items {
-                id,
                 title,
+                slug,
                 previewImage {
                     url,
                     width,
@@ -24,11 +24,12 @@ export const getProjectPreviews = async () => {
   }
 };
 
-export const getProject = async (id) => {
+export const getProject = async (slug) => {
   const query = `{
-    projectCollection(where: { id: ${id} }) {
+    projectCollection(where: { slug: "${slug}" }) {
         items {
             title,
+            slug,
             description,
             client,
             role,

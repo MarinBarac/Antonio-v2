@@ -2,8 +2,8 @@ import Project from "@modules/projects/Project";
 import { getProject } from "@services/projects";
 import { openGraph } from "shared/sharedMetadata";
 
-export const generateMetadata = async ({ params: { id } }) => {
-  const pageInfo = await getProject(id);
+export const generateMetadata = async ({ params: { slug } }) => {
+  const pageInfo = await getProject(slug);
   return {
     title: `Antonio Vidakovic - Projects | ${pageInfo.title}`,
     description: pageInfo.description,
@@ -15,8 +15,8 @@ export const generateMetadata = async ({ params: { id } }) => {
   };
 };
 
-const ProjectPage = ({ params: { id } }) => {
-  return <Project id={id} />;
+const ProjectPage = ({ params: { slug } }) => {
+  return <Project slug={slug} />;
 };
 
 export default ProjectPage;
