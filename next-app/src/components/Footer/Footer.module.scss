@@ -46,8 +46,12 @@
   }
 
   .legalText {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     margin: 0 auto;
     color: $grey;
+    font-weight: 400;
     text-align: center;
   }
 }
