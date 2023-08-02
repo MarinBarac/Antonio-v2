@@ -34,7 +34,7 @@ const HomePage = async () => {
       />
       <ProjectsSection />
       <ServicesSection />
-      <ArticlesSection articles={mediumArticles.items}/>
+      <ArticlesSection articles={mediumArticlesData.items}/>
       <ReadyToTalkSection />
     </>
   );
