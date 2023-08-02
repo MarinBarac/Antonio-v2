@@ -2,7 +2,7 @@ import CardsList from "@components/CardsList";
 import styles from "./ArticlesSection.module.scss";
 
 const ArticlesSection = async ({ articles }) => {
-  const formatedArticles = articles.map((article) => ({
+  const formatedArticles = articles.slice(0, 4).map((article) => ({
     title: article.title,
     href: article.link,
     image: { src: article.thumbnail },

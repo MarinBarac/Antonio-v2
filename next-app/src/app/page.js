@@ -17,7 +17,7 @@ export const generateMetadata = () => {
   };
 };
 
-export default async function Home() {
+export default function Home() {
 
   return <HomePage />;
 }
