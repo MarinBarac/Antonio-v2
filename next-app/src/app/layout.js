@@ -5,11 +5,12 @@ import Header from "@components/Header";
 import Favicon from "app/favicon.ico";
 
 import "./globals.scss";
+import config from "@config/site";
 
 export const generateMetadata = () => {
-  require("dotenv").config();
+  console.log(config.siteUrl);
   return {
-    metadataBase: new URL(process.env.SITE_URL),
+    metadataBase: new URL(config.siteUrl),
     charSet: "utf-8",
     viewport: "width=device-width, initial-scale=1",
     alternates: {

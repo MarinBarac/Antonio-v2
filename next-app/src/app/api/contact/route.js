@@ -1,21 +1,21 @@
+import config from "@config/site";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const res = await request.json();
   const { fullName, email, message, mailServiceConfiguration } = res;
-  require("dotenv").config();
   const transporter = nodemailer.createTransport({
     ...mailServiceConfiguration,
     auth: {
-      user: process.env.ANTONIO_EMAIL,
-      pass: process.env.EMAIL_PASS,
+      user: config.email,
+      pass: config.emailPassword,
     },
   });
 
   const mailData = {
-    from: process.env.ANTONIO_EMAIL,
-    to: process.env.ANTONIO_EMAIL,
+    from: config.email,
+    to: config.emailPassword,
     replyTo: email,
     subject: `Portfolio message from ${fullName}`,
     text: JSON.stringify(res) + " | Sent from: " + email,

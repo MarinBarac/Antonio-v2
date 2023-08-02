@@ -1,11 +1,13 @@
+import config from "@config/site";
+
 export const callContentful = async (query) => {
   require("dotenv").config();
-  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${config.conentfulSpaceId}`;
 
   const fetchOptions = {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${config.contentfulAccessToken}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ query }),

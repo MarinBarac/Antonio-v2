@@ -1,9 +1,10 @@
+import config from "@config/site";
 import { openGraph } from "shared/sharedMetadata";
 
 const { default: ProjectsPage } = require("@modules/projects");
 
 export const metadata = {
-  metadataBase: new URL(`${process.env.SITE_URL}projects`),
+  metadataBase: new URL(`${config.siteUrl}projects`),
   title:
     "Antonio Vidakovic - UX/UI Design Portfolio | Saas Platforms, Web Shops, Marketing Sites, and More",
   description:
