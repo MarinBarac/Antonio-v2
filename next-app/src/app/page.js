@@ -2,8 +2,6 @@ import HomePage from "@modules/home";
 import { openGraph } from "shared/sharedMetadata";
 
 export const generateMetadata = () => {
-  require("dotenv").config();
-
   return {
     title:
       "Antonio Vidakovic - UX/UI Designer | Problem-Solving User Experience and Interface Design",
@@ -20,5 +18,6 @@ export const generateMetadata = () => {
 };
 
 export default function Home() {
+
   return <HomePage />;
 }
