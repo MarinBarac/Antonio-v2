@@ -11,6 +11,7 @@ const CardsList = ({ data }) => {
             image={item.image}
             title={item.title}
             className={`${styles.card} ${item.className}`}
+            target={item.target}
           />
         </li>
       ))}

@@ -7,6 +7,7 @@ const ArticlesSection = async ({ articles }) => {
     href: article.link,
     image: { src: article.thumbnail },
     className: styles.card,
+    target: '_blank',
   }));
 
   return (

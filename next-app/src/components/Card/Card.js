@@ -5,7 +5,7 @@ import { ArrowRight } from "shared/assets/icons";
 
 const DEFAULT_IMAGE_SIZE = 400;
 
-const Card = ({ type, title, tags, image, href, className }) => {
+const Card = ({ type, title, tags, image, href, className, target = '_self' }) => {
   return (
     <div
       style={{
@@ -32,7 +32,7 @@ const Card = ({ type, title, tags, image, href, className }) => {
             </ul>
           )}
         </div>
-        <Link href={href} className={styles.arrowContainer}>
+        <Link href={href} className={styles.arrowContainer} target={target}>
           <ArrowRight className={styles.arrow} />
         </Link>
       </div>
