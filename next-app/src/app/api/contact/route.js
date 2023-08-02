@@ -15,7 +15,7 @@ export async function POST(request) {
 
   const mailData = {
     from: config.email,
-    to: config.emailPassword,
+    to: email,
     replyTo: email,
     subject: `Portfolio message from ${fullName}`,
     text: JSON.stringify(res) + " | Sent from: " + email,
