@@ -5,9 +5,16 @@ import ReadyToTalkSection from "@components/BookACallSection/ReadyToTalkSection"
 import { getPage } from "@services/pages";
 import ProjectsSection from "@modules/projects/ProjectsSection";
 import { generateBookACallLink } from "shared/services";
+import { getMediumFeed } from "api/http";
+import ArticlesSection from "./ArticlesSection";
 
 const HomePage = async () => {
-  const pageInfo = await getPage("home");
+  const [pageInfo, mediumArticles] = await Promise.all([
+    getPage("home"),
+    getMediumFeed(),
+  ]);
+
+  const mediumArticlesData = await mediumArticles.json();
 
   return (
     <>
@@ -20,13 +27,14 @@ const HomePage = async () => {
         title={`${pageInfo.midsectionTitle}`}
         description={`${pageInfo.midsectionSubtitle}`}
         firstLink={generateBookACallLink()}
-        firstLinkText='Book a call'
-        secondLink='/contact'
-        secondLinkText='Send an inquiry'
-        secondLinkType='green-underline'
+        firstLinkText="Book a call"
+        secondLink="/contact"
+        secondLinkText="Send an inquiry"
+        secondLinkType="green-underline"
       />
       <ProjectsSection />
       <ServicesSection />
+      <ArticlesSection articles={mediumArticlesData.items.slice(0, 4)}/>
       <ReadyToTalkSection />
     </>
   );

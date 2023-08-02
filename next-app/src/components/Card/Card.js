@@ -3,15 +3,17 @@ import styles from "./Card.module.scss";
 import Image from "next/image";
 import { ArrowRight } from "shared/assets/icons";
 
+const DEFAULT_IMAGE_SIZE = 400;
+
 const Card = ({ type, title, tags, image, href, className }) => {
   return (
     <div
       style={{
         backgroundImage:
           type !== "main"
-            ? `linear-gradient(0deg, #030906 0%, rgba(0, 0, 0, 0.00) 100%), url(${
+            ? `url(${
                 image.src || image.url
-              })`
+              }), linear-gradient(0deg, #030906 10%, rgba(0, 0, 0, 0.00) 100%)`
             : "none",
         backgroundColor: type === "main" ? "#030906" : "none",
       }}
@@ -31,14 +33,20 @@ const Card = ({ type, title, tags, image, href, className }) => {
           )}
         </div>
         <Link href={href} className={styles.arrowContainer}>
-          <ArrowRight className={styles.arrow}/>
+          <ArrowRight className={styles.arrow} />
         </Link>
       </div>
       <div className={styles.imageContainer}>
-        <Image alt="Card image" src={image.src || image.url} width={image.width} height={image.height} className={styles.image}/>
+        <Image
+          alt="Card image"
+          src={image.src || image.url}
+          width={image.width || DEFAULT_IMAGE_SIZE}
+          height={image.height || DEFAULT_IMAGE_SIZE}
+          className={styles.image}
+        />
       </div>
       <Link href={href} className={styles.arrowContainer}>
-        <ArrowRight className={styles.arrow}/>
+        <ArrowRight className={styles.arrow} />
       </Link>
     </div>
   );

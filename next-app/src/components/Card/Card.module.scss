@@ -8,6 +8,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-blend-mode: multiply;
 
   .content {
     width: calc(100% - 48px);
