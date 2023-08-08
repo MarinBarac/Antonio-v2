@@ -15,7 +15,7 @@ const PageTitle = ({ title, description, href, withImage, backLinkText, children
             <p className="p2">{backLinkText}</p>
           </Link>
         )}
-        <h1 className="h1">{title}</h1>
+        <h1 className={`h1 ${styles.title}`}>{title}</h1>
         <p className={`h3 ${styles.description}`}>{description}</p>
         {withImage && <PageTitleImage />}
         {children}
