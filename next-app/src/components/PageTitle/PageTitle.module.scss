@@ -22,7 +22,6 @@
       gap: 4px;
       padding-inline: 32px;
       color: $light;
-      animation: show 700ms ease-out;
 
       .linkArrow {
         display: flex;
@@ -33,14 +32,12 @@
 
     .title {
       position: relative;
-      animation: show 700ms ease-out;
     }
 
     .description {
       position: relative;
       color: $grey;
       white-space: pre-line;
-      animation: show 700ms ease-out;
     }
 
     .image {
@@ -58,6 +55,21 @@
         text-align: center;
       }
     }
+  }
+}
+
+
+.container.showAnimation {
+  .link {
+    animation: show 500ms ease-in-out;
+  }
+
+  .title {
+    animation: show 500ms ease-in-out;
+  }
+
+  .description {
+    animation: show 500ms ease-in-out;
   }
 }
 
@@ -90,10 +102,8 @@
 @keyframes show {
   0% {
     opacity: 0;
-    transform: translateX(-50%);
   }
   100% {
     opacity: 1;
-    transform: translateX(0%);
   }
 }

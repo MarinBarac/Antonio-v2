@@ -29,6 +29,7 @@ html {
 body {
   width: 100%;
   height: 100%;
+  background-color: $black;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
   white-space: pre-line;
@@ -106,6 +107,11 @@ a {
   }
 }
 
+.showFromLeft {
+  position: relative;
+  animation: showFromLeft 400ms ease-in-out;
+}
+
 @media screen and (min-width: $tablet) {
   .h1 {
     font-size: 72px;
@@ -126,5 +132,16 @@ a {
     & > div:first-child {
       max-width: $max-content-width;
     }
+  }
+}
+
+@keyframes showFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }

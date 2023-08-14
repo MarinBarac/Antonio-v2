@@ -1,7 +1,10 @@
+"use client";
+
 import Button from "@components/Button";
 import styles from "./BookACallSection.module.scss";
 import Link from "next/link";
 import CustomLink from "@components/CustomLink";
+import { useEffect, useRef, useState } from "react";
 
 const BookACallSection = ({
   title,
@@ -13,10 +16,40 @@ const BookACallSection = ({
   secondLinkText,
   secondLinkBlank,
   secondLinkType,
+  showAnimation,
 }) => {
+  const containerRef = useRef(null);
+  const [runAnimation, setRunAnimation] = useState(false);
+
+  useEffect(() => {
+    const containerRefCopy = containerRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isIntersecting = entries[0].isIntersecting;
+        if (isIntersecting && !runAnimation) {
+          setRunAnimation(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.35,
+      }
+    );
+
+    !runAnimation && showAnimation && observer.observe(containerRefCopy);
+
+    return () => observer.disconnect(containerRefCopy);
+  }, [showAnimation, containerRef, runAnimation]);
+
   return (
     <section className="section">
-      <div className={styles.container}>
+      <div
+        ref={containerRef}
+        className={`${styles.container} ${
+          showAnimation && styles.showAnimation
+        } ${runAnimation && styles.runAnimation}`}
+      >
         <h2
           className={`${type === "largeText" ? "h2" : "h3"} ${
             type === "largeText" && styles.large

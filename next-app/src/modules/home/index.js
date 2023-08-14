@@ -22,6 +22,7 @@ const HomePage = async () => {
         title={<p style={{ maxWidth: "676px" }}>{pageInfo.title}</p>}
         description={`${pageInfo.description}`}
         withImage={true}
+        showAnimation
       />
       <BookACallSection
         title={`${pageInfo.midsectionTitle}`}

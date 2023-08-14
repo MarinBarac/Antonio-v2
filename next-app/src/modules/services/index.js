@@ -11,6 +11,7 @@ const ServicesPage = async () => {
       <PageTitle
         title={pageInfo.title}
         description={`${pageInfo.description}`}
+        disableAnimation
       />
       <ServicesListSection />
       <ReadyToTalkSection />

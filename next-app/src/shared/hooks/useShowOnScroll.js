@@ -2,12 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 const generateThresholds = (startingRatio, endingRatio) => {
   const multiplier = (endingRatio - startingRatio) / 100;
-  console.log(
-    Array.from(
-      { length: 100 },
-      (_, i) => +(startingRatio + (i + 1) * multiplier).toFixed(2)
-    )
-  );
   return Array.from(
     { length: 100 },
     (_, i) => +(startingRatio + (i + 1) * multiplier).toFixed(2)

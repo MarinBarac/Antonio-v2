@@ -3,9 +3,9 @@ import styles from "./PageTitle.module.scss";
 import PageTitleImage from "./PageTitleImage";
 import { ArrowRight } from "shared/assets/icons";
 
-const PageTitle = ({ title, description, href, withImage, backLinkText, children }) => {
+const PageTitle = ({ title, description, href, withImage, backLinkText, children, showAnimation }) => {
   return (
-    <section className={`${styles.container} ${withImage && styles.withImage}`}>
+    <section className={`${styles.container} ${withImage && styles.withImage} ${showAnimation && styles.showAnimation }`}>
       <div className={styles.content}>
         {href && (
           <Link href={href} className={styles.link}>
