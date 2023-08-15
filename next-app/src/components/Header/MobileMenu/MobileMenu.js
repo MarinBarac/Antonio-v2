@@ -6,9 +6,11 @@ import Hamburger from "@components/Hamburger/Hamburger";
 import { MOBILE_LINKS } from "./constants";
 
 import styles from "./MobileMenu.module.scss";
+import { useDisableBodyScroll } from "shared/hooks";
 
 const MobileMenu = () => {
   const [show, setShow] = useState(false);
+  useDisableBodyScroll(show);
 
   return (
     <div className={styles.container}>

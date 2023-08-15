@@ -1,14 +1,11 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useScrollRestoration } from "shared/hooks";
 
 const App = ({ children }) => {
-  const pathname = usePathname();
-  return (
-    <div className={`pageContent ${pathname?.length > 1 && "moveRight"}`}>
-      {children}
-    </div>
-  );
+  useScrollRestoration();
+
+  return children;
 };
 
 export default App;

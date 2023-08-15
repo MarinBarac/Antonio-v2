@@ -1,62 +1,48 @@
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 
-const saveScrollPos = (url) => {
+const saveScrollPos = (pathname) => {
   const scrollPos = { x: window.scrollX, y: window.scrollY };
-  sessionStorage.setItem(url, JSON.stringify(scrollPos));
+  sessionStorage.setItem(pathname, JSON.stringify(scrollPos));
 };
 
-function restoreScrollPos(url) {
-  const scrollPos = JSON.parse(sessionStorage.getItem(url));
+const restoreScrollPosition = (pathname) => {
+  const scrollPos = JSON.parse(sessionStorage.getItem(pathname));
+
   if (scrollPos) {
     setTimeout(() => {
       window.scrollTo(scrollPos.x, scrollPos.y);
     }, 100);
   }
-}
+};
 
-const useScrollRestoration = (path) => {
-    const router = useRouter();
+const useScrollRestoration = () => {
+  const pathname = usePathname();
+
+  const savedPathNameRef = useRef(pathname);
+
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
-      let shouldScrollRestore = false;
       window.history.scrollRestoration = "manual";
-      restoreScrollPos(path);
-
-      const onBeforeUnload = (event) => {
-        saveScrollPos(path);
-        delete event["returnValue"];
-      };
-
-      const onRouteChangeStart = () => {
-        saveScrollPos(path);
-      };
-
-      const onRouteChangeComplete = (url) => {
-        if (shouldScrollRestore) {
-          shouldScrollRestore = false;
-          restoreScrollPos(url);
-        } else {
-          window.scrollTo(0, 0);
-        }
+      const onBeforeUnload = () => {
+        saveScrollPos(pathname);
       };
 
       window.addEventListener("beforeunload", onBeforeUnload);
-      router.events.on("routeChangeStart", onRouteChangeStart);
-      router.events.on("routeChangeComplete", onRouteChangeComplete);
-      router.beforePopState(() => {
-        shouldScrollRestore = true;
-        return true;
-      });
+
+      if (savedPathNameRef.current === pathname) {
+        restoreScrollPosition(pathname);
+      } else {
+        window.scrollTo(0, 0);
+      }
+
+      savedPathNameRef.current = pathname;
 
       return () => {
         window.removeEventListener("beforeunload", onBeforeUnload);
-        router.events.off("routeChangeStart", onRouteChangeStart);
-        router.events.off("routeChangeComplete", onRouteChangeComplete);
-        router.beforePopState(() => true);
       };
     }
-  }, [path, router]);
+  }, [pathname]);
 };
 
 export default useScrollRestoration;
