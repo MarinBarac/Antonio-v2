@@ -17,8 +17,11 @@
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 2;
+    transform: translate(-70px, -200px);
+    z-index: 2;
 
     .text {
+      opacity: 0;
       padding: 4px 12px;
       background-color: $primary;
       font-size: 19px;
@@ -43,6 +46,22 @@
     grid-row-end: 6;
     grid-column-start: 2;
     grid-column-end: 4;
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+.container.showAnimation {
+  .textContainer {
+    animation: moveCursor 2s ease-in forwards;
+
+    .text {
+      animation: showHover 2s ease-in forwards;
+    }
+  }
+
+  .image {
+    animation: showImage 2s ease-in forwards;
   }
 }
 
@@ -50,5 +69,58 @@
   .container {
     width: fit-content;
     margin: 0 auto;
+  }
+}
+
+@keyframes moveCursor {
+  0% {
+    transform: translate(-70px, -200px);
+  }
+  40% {
+    transform: translate(50%, -50px);
+  }
+  59% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.5;
+    transform: translate(50%, -50px);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(50%, -50px);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes showHover {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showImage {
+  0% {
+    opacity: 0;
+  }
+  67% {
+    opacity: 0;
+  }
+  72% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }

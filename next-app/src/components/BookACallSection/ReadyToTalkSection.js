@@ -13,10 +13,11 @@ const ReadyToTalkSection = ({ secondLinkType }) => {
       }
       type="largeText"
       firstLink={generateBookACallLink()}
-      firstLinkText='Book a call'
-      secondLink='/contact'
-      secondLinkText='Send an inquiry'
+      firstLinkText="Book a call"
+      secondLink="/contact"
+      secondLinkText="Send an inquiry"
       secondLinkType={secondLinkType}
+      showAnimation
     />
   );
 };

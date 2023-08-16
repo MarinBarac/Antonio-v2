@@ -22,6 +22,7 @@ const ContactPage = async () => {
         secondLinkText="Book videocall"
         secondLinkBlank={true}
         secondLinkType='green-underline'
+        showAnimation
       />
     </>
   );

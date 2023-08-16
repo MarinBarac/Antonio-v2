@@ -16,19 +16,14 @@
   padding: 0;
 }
 
-html,
-body {
-  scroll-behavior: smooth;
-}
-
 html {
-  overflow: hidden;
   height: 100vh;
 }
 
 body {
   width: 100%;
   height: 100%;
+  background-color: $black;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
   white-space: pre-line;
@@ -36,7 +31,6 @@ body {
   z-index: 1;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  overflow: auto;
 }
 
 main {
@@ -106,6 +100,15 @@ a {
   }
 }
 
+.showFromLeft {
+  position: relative;
+  animation: showFromLeft 400ms ease-in-out;
+}
+
+.scrollLock {
+  overflow: hidden;
+}
+
 @media screen and (min-width: $tablet) {
   .h1 {
     font-size: 72px;
@@ -126,5 +129,20 @@ a {
     & > div:first-child {
       max-width: $max-content-width;
     }
+  }
+
+  .scrollLock {
+    overflow: unset;
+  }
+}
+
+@keyframes showFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }

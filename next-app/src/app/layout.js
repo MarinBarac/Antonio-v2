@@ -6,9 +6,10 @@ import Favicon from "app/favicon.ico";
 
 import "./globals.scss";
 import config from "@config/site";
+import { headers } from "next/dist/client/components/headers";
+import App from "./app";
 
 export const generateMetadata = () => {
-  console.log(config.siteUrl);
   return {
     metadataBase: new URL(config.siteUrl),
     charSet: "utf-8",
@@ -33,6 +34,9 @@ export const generateMetadata = () => {
 };
 
 export default function RootLayout({ children }) {
+  const headersList = headers();
+  const pathname = headersList.get("pathname");
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -101,9 +105,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <App>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </App>
       </body>
     </html>
   );
